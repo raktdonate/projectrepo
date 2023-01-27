@@ -1,0 +1,152 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:ital,wght@1,300&family=Source+Sans+Pro&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    font-family:'Inter', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+
+
+.box1{
+    display: flex;
+    height: 82vh ;
+}
+.boxwhy{
+    width: 60vw;
+    height: 75vh;
+    background-color: white;
+    margin: 6vh 4vw;
+    border: solid rgb(174, 167, 167);
+    
+
+    font-family:'Inter', sans-serif;
+}
+.donationimg{
+    width: 38vw;
+    height: 75vh;
+   
+    margin: 6vh 4vw;
+}
+#imagedonation{
+    text-align: center;
+    color: #b91816;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+.image{
+    height: 55vh;
+    width: 35vw;
+}
+.para{
+    margin: 3vh 3vw;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+#headingwhy{
+    text-align: center;
+    font-weight: bolder;
+    color: #b91816;
+}
+.box2{
+    display: flex;
+    margin: 4vh 3vw;
+    border-radius: 5px;
+    border: solid rgb(173, 170, 170);
+    height: 80vh;
+}
+.dropbox{
+    height: 80vh;
+    width: 30vw;
+}
+.imagedrop{
+    height:28vh ;
+    width: 30vw;
+    
+}
+.eligibilitybox{
+    height: 80vh;
+    width: 60vw;
+    margin: 2vh 3vw;
+    /* background-color: red; */
+}
+#eligibilityhead{
+    text-align: center;
+    font-size: 2.7rem;
+    color: #b91816;
+}
+.box3{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 65vh;
+    /* background-color: yellow; */
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.inp{
+    justify-content: center;
+    height: 8vh;
+    width: 40vw;
+    border-radius: 13px ;
+    border: solid #b91816;
+    padding: 4px;
+    margin-top: 4vh;
+    margin-left: 8vw;
+
+
+}
+.btn{
+    width: 10vw;
+    height: 12vh;
+    margin-top: 5vh;
+    margin-left: 24vw;
+    border-radius: 15px;
+    background-color: rgb(164, 159, 159);
+
+}
+.rect{
+    width: 98vw;
+    height: 60vh;
+    display: flex;
+    /* border: solid gray; */
+    box-shadow:  4px 4px 6px gray;
+    margin-bottom: 9vh;
+}
+.before{
+   
+    height:50vh ;
+    width: 30vw;
+    border-radius: 5px;
+    border: solid #b91816;
+    margin: 10px;
+}
+.after{
+   
+    height:50vh ;
+    width: 30vw;
+    border-radius: 5px;
+    border: solid #b91816;
+    margin: 10px;
+}
+.during{
+   
+    height:50vh ;
+    width: 30vw;
+    border-radius: 5px;
+    border: solid #b91816;
+    margin: 10px;
+}
+.recthead{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 800;
+}
+.footer{
+    height: 17vh;
+    width: 100vw;
+    background-color: gray;
+}

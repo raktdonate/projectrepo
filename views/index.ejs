@@ -2,5 +2,63 @@
 </head>
 <body>
     <%- include('./includes/navbar.ejs')%>
-    <p>welcome to home page</p>
+    <div class="box1">
+        <div class="boxwhy">
+            <h1 id="headingwhy">WHY YOU SHOULD DONATE ?</h1>
+            <p class="para">What if everyone eligible to donate became complacent and decided they didn't need to donate because
+                someone else would?
+                </p>
+
+               <p class="para"> What if there wasn't enough donated blood available when you, a loved one - anyone - needed it? Blood cannot be manufactured it can only come from generous donors.</p>
+            
+            <p class="para"> A study in 2022 extrapolated the eligible donor population in India at 402 million. The supply was
+                estimated at 33.8 donations against the demand of 36.3 per thousand donations, translating to a shortage
+                of one million units annually. Medical specialty had the highest demand for blood at 6.0 million units
+                (41.2%), followed by surgery 4.1 million (27.9%), obstetrics and gynecology 3.3 million (22.4%) and
+                pediatrics 1.2 million (8.5%)</p>
+           <p class="para"> The need for blood is universal, but access to safe blood for everyone who needs it remains a challenge
+            worldwide. Voluntary, unpaid blood donors who give blood regularly can help overcome blood shortages. Their
+            altruistic donation saves lives, they are heroes. We can all be heroes </p>
+        </div>
+        <div class="donationimg">
+           <h2 id="imagedonation">Be a Hero</h2>
+            <img class="image" src="images/donationpic.png" alt="">
+        </div>
+    </div>
+    <div class="box2">
+        <div class="dropbox">
+            <img class="imagedrop" src="images/inverteddrop.png" alt="">
+            <p class="para"> >>Past three months - not donated blood or been treated for Malaria.</p>
+            <p class="para"> >>The donor should not have had any immunization/vaccination for cholera, typhoid, diphtheria, tetanus, plague, or gammaglobulin in 15 days preceding the blood donation. </p>
+            <p class="para">>>Eligible men may donate blood once every 3 months.  </p>
+            <p class="para"> >>Eligible women may donate once every 4 months.</p>
+        </div>
+        <div class="eligibilitybox">
+            <h1 id="eligibilityhead">Check if you are eligible or not </h1>
+            <div class="box3">
+            <input class="inp" type="number" placeholder="Enter your age">
+            <input class="inp" type="number" placeholder="Enter your weight">
+            <input class="inp" type="number" placeholder="Enter you heamoglobin level">
+            <input class= "inp" type="date" name="Last donated" id="date" placeholder="Last donated on">
+            <input class="inp" type="text" placeholder="Gender">
+            <button class="btn" type="submit">Check</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="rect">
+        <div class="before">
+            <h1 class="recthead">Before donation</h1>
+        </div>
+        <div class="during">
+            <h1 class="recthead">During donation</h2>
+        </div>
+        <div class="after">
+            <h1 class="recthead">After donation</h1>
+        </div>
+    </div>
+    <footer class="footer">
+        
+    </footer>
 <%- include('./includes/tail.ejs')%>
