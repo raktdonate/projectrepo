@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.listdc{
+    width: 90%;
+    height: 20vh;
+    background-color: rgb(249, 187, 183);
+    margin-top: 5vh;
+    margin-left: 5vw;
+    border-radius: 2vh;
+    display: flex;
+}
+.listdcdiv{
+    position: relative;
+    left: 3vw;
+    top: 3vh;
+    
+   font-size: 1.5vw;
+    height: 20vh;
+    width: 18vw;
+}
+.info{
+    margin-bottom: 2vh;
+    font-size: 1.8vw;
+    font-weight: 600;
+}
+.joincommain{
+    height: 50vh;
+    width: 70vw;
+    background-color: aquamarine;
+    position: relative;
+    left: 15vw;
+    margin-top: 4vh;
+    border-radius: 3vh;
+}
+.joincomlist{
+    list-style: none;
+    align-items: center;
+}
+.joincomlistmain{
+    position: relative;
+    left: 10vw;
+    top: 9vh;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+}

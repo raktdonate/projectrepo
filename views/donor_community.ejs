@@ -1,0 +1,53 @@
+<%- include('./includes/head.ejs')%>
+<link rel="stylesheet" href="css/donorcommunity.css">
+</head>
+<body>
+    <%- include('./includes/navbar.ejs')%>
+    <ul>
+        <li class="listdc">
+            <div class="listdcdiv">
+                <p class="info">Name</p>
+                <p>Abbas Haider</p>
+            </div>
+            <div class="listdcdiv">
+                <p class="info">City</p>
+                <p>Delhi</p>
+            </div>
+            <div class="listdcdiv">
+                <p class="info">Chat</p>
+                <p>Click here to chat</p>
+            </div>
+            <div class="listdcdiv">
+                <p class="info">Contact Number</p>
+                <p>3728282827</p>
+            </div>
+            <div class="listdcdiv">
+                <p class="info">Email</p>
+                <p>abbas@gmail.com</p>
+            </div>
+        </li>
+    </ul>
+    <div class="joincommain">
+        <form action="/joincommunity" method="post">
+            <ul class="joincomlist">
+                <li class="joincomlistmain">
+                    <label for="name">Enter your name</label>
+                    <input name="name" id="name" type="text">
+                </li>
+                <li class="joincomlistmain">
+                    <label for="city">Enter your city</label>
+                    <input name="city" id="city" type="text">
+                </li>
+                <li class="joincomlistmain">
+                    <label for="contact">Enter your contact number</label>
+                    <input name="contact" id="contact" type="number">
+                </li>
+                <li class="joincomlistmain">
+                    <label for="email">Enter your email</label>
+                    <input name="email" id="email" type="email">
+                </li>
+            </ul>
+            <button class="btn joincomlistmain" type="submit">Join Community</button>
+        </form>
+    </div>
+<%- include('./includes/tail.ejs')%>
