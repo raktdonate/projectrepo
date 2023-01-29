@@ -1,0 +1,31 @@
+<%- include('./includes/head.ejs')%>
+<!-- <link rel="stylesheet" href="css/error.css"> -->
+<link rel="stylesheet" href="css/donorcommunity.css">
+</head>
+<body>
+    <%- include('./includes/navbar.ejs')%>
+    <div class="joincommain">
+        <form action="/joincommunity" method="post">
+            <ul class="joincomlist">
+                <!-- <li class="joincomlistmain">
+                    <label for="name">Enter your name</label>
+                    <input name="name" id="name" type="text">
+                </li> -->
+                <li class="joincomlistmain">
+                    <label for="city">Enter your city</label>
+                    <input name="city" id="city" type="text">
+                </li>
+                <li class="joincomlistmain">
+                    <label for="contact">Enter your contact number</label>
+                    <input name="contact" id="contact" type="number">
+                </li>
+                <!-- <li class="joincomlistmain">
+                    <label for="email">Enter your email</label>
+                    <input name="email" id="email" type="email">
+                </li> -->
+            </ul>
+            <button class="joincomlistmain" type="submit">Join Community</button>
+        </form>
+    </div>
+    
+<%- include('./includes/tail.ejs')%>

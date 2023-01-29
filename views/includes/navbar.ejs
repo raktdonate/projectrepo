@@ -9,10 +9,32 @@
             <li class="listing"><a href="/donorcommunity"> DONOR COMMUNITY</a></li>
         </ul>
     </div>
+    <% if(!isAuth){%>
     <div class="right">
         <ul class="list">
             <li class="listing"> <a href="/login">LOGIN</a> </li>
             <li class="listing"> <a href="/signup">SIGNUP</a> </li>
         </ul>
     </div>
+    <%}else{%>
+        <div class="right">
+            <ul class="list">
+                <li class="listing imgprofile">
+                    <!-- <img id="profileimg" class="profileimg" src="images/pro.png" alt="profile"> -->
+                    <!-- <form action="/logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form> -->
+                    <div class="dropdown">
+                        <button class="dropbtn"><img id="profileimg" class="profileimg" src="images/pro.png" alt="profile"></button>
+                        <div class="dropdown-content">
+                          <a href="/profile">Profile</a>
+                          <a href="/joincommunity">Join Community</a>
+                          <a href="/logout">Logout</a>
+                           
+                        </div>
+                      </div>
+                </li>
+            </ul>
+        </div>
+    <%}%>
 </nav>
