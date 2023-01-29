@@ -8,9 +8,7 @@ const session=require('express-session')
 const MongoDBStore=require('connect-mongodb-session')(session)
 const errorController=require('./controllers/error')
 const mongoose=require('mongoose')
-
 const User=require('./model/user')
-
 const store=new MongoDBStore({
     uri:'mongodb+srv://blood77:raktkhuab123@cluster0.cwywrfk.mongodb.net/blooddonation',
     collection:'sessions'
