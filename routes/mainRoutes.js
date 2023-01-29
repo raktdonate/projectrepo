@@ -9,5 +9,7 @@ router.get('/donorcommunity',mainController.getDonorCommunity)
 
 router.post('/joincommunity',mainController.postJoinCommunity)
 
+router.get('/joincommunity',mainController.getJoinCommunity)
+
 
 module.exports=router

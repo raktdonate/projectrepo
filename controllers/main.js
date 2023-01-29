@@ -1,17 +1,57 @@
+const User=require('../model/user')
+
 exports.getIndex=(req,res,next)=>{
-    res.render('index.ejs',{
-        pageTitle:'Home Page'
+    res.render('index',{
+        pageTitle:'Home Page',
+        isAuth:req.session.isLoggedIn
     })
 }
 exports.getDonorCommunity=(req,res,next)=>{
-    res.render('donor_community.ejs',{
-        pageTitle:'Home Page'
+    User.find({isDonor:true}).then(users=>{
+        res.render('donor_community',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData:users
+        })
     })
+    
+}
+exports.getJoinCommunity=(req,res,next)=>{
+    User.find({isDonor:true}).then(users=>{
+        res.render('joincommunity',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData:users
+        })
+    })
+    
 }
 exports.postJoinCommunity=(req,res,next)=>{
-    const name=req.body.name
-    const email=req.body.email
+    if(!req.session.isLoggedIn){
+        console.log("to join donor community first login")
+        return res.redirect('/login')
+    }
+    if(req.user.isDonor){
+        console.log("you are already a donor")
+        return res.redirect('/')
+        // res.render('index',{
+        //     pageTitle:'Home Page',
+        //     isAuth:req.session.isLoggedIn
+        // })
+    }
     const city=req.body.city
     const contact=req.body.contact
-    console.log(name,email,city,contact)
+    req.user.city=city
+    req.user.contact=contact
+    req.user.isDonor=true;
+    req.user.save().then(result=>{
+        User.find({isDonor:true}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData:users
+            })
+        })
+    })
+    // console.log(name,email,city,contact)
 }

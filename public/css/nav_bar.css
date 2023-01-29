@@ -60,3 +60,11 @@ body{
     margin-left: 10px;
     padding-bottom: 3px;
 }
+.profileimg{
+    height: 8vh;
+    width: 4vw;
+}
+.imgprofile{
+    position: relative;
+    left: 14vw;
+}
