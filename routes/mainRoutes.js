@@ -11,5 +11,6 @@ router.post('/joincommunity',mainController.postJoinCommunity)
 
 router.get('/joincommunity',mainController.getJoinCommunity)
 
+router.post('/search',mainController.postSearch)
 
 module.exports=router

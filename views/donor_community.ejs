@@ -3,7 +3,22 @@
 </head>
 <body>
     <%- include('./includes/navbar.ejs')%> 
+    <div class="box">
+        <div class="box1">
+            <img src="images/community.jpg" alt="">
+        </div>
+        <div class="box2">
+            <a href="/joincommunity">Join Community</a>
+        </div>
+    </div>
     <% if(userData.length>=0){%>
+    <div class="search">
+        <form action="/search" method="post">
+            <label  for="search">Enter your city</label>
+            <input name="search" id="search" type="text">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <ul>
         <% for(let user of userData){%>
         <li class="listdc">

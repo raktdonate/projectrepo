@@ -17,6 +17,10 @@ exports.getDonorCommunity=(req,res,next)=>{
     
 }
 exports.getJoinCommunity=(req,res,next)=>{
+    if(!req.session.isLoggedIn){
+        console.log("to join donor community first login")
+        return res.redirect('/login')
+    }
     User.find({isDonor:true}).then(users=>{
         res.render('joincommunity',{
             pageTitle:'Home Page',
@@ -54,4 +58,15 @@ exports.postJoinCommunity=(req,res,next)=>{
         })
     })
     // console.log(name,email,city,contact)
+}
+exports.postSearch=(req,res,next)=>{
+    const city=req.body.search
+    console.log(city)
+    User.find({isDonor:true,city:city}).then(users=>{
+        res.render('donor_community',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData:users
+        })
+    })
 }
