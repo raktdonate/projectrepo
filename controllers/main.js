@@ -55,3 +55,14 @@ exports.postJoinCommunity=(req,res,next)=>{
     })
     // console.log(name,email,city,contact)
 }
+exports.postSearch=(req,res,next)=>{
+    const city=req.body.search
+    console.log(city)
+    User.find({isDonor:true,city:city}).then(users=>{
+        res.render('donor_community',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData:users
+        })
+    })
+}
