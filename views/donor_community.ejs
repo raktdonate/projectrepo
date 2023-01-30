@@ -8,19 +8,21 @@
             <img src="images/community.jpg" alt="">
         </div>
         <div class="box2">
+            <p id="communa">To join our community</p>
             <a href="/joincommunity">Join Community</a>
+
+            <hr class="lining">
             <div class="search">
                 <form action="/search" method="post">
                     <label  for="search">Enter your city</label>
                     <input name="search" id="search" type="text">
-                    <button type="submit">Search</button>
+                    <button class="btndonor" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </div>
 
     <% if(userData.length>=0){%>
-   
     <ul>
         <% for(let user of userData){%>
         <li class="listdc">
