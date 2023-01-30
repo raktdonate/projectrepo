@@ -17,6 +17,10 @@ exports.getDonorCommunity=(req,res,next)=>{
     
 }
 exports.getJoinCommunity=(req,res,next)=>{
+    if(!req.session.isLoggedIn){
+        console.log("to join donor community first login")
+        return res.redirect('/login')
+    }
     User.find({isDonor:true}).then(users=>{
         res.render('joincommunity',{
             pageTitle:'Home Page',

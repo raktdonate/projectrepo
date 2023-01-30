@@ -4,13 +4,14 @@
 <body>
     <%- include('../includes/navbar.ejs')%>
       <div class="login-box">
+
         <h1>Login</h1>
         <form action="/login" method="post">
           <label>Email</label>
           <input name="email" id="email" type="email" placeholder="" />
           <label>Password</label>
           <input name="password" id="password" type="password" placeholder="" />
-          <button type="submit">Login</button>
+          <button class="btnlogin" type="submit">Login</button>
         </form>
         <p class="para-2">
           Don't have an account? <a href="signup">Sign Up Here</a>
