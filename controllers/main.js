@@ -70,3 +70,9 @@ exports.postSearch=(req,res,next)=>{
         })
     })
 }
+exports.getProfile=(req,res,next)=>{
+    res.render('profile',{
+        pageTitle:'Home Page',
+        isAuth:req.session.isLoggedIn
+    })
+}

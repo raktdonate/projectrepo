@@ -13,4 +13,6 @@ router.get('/joincommunity',mainController.getJoinCommunity)
 
 router.post('/search',mainController.postSearch)
 
+router.get('/profile',mainController.getProfile);
+
 module.exports=router
