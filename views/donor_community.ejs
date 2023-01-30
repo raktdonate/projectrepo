@@ -12,6 +12,13 @@
         </div>
     </div>
     <% if(userData.length>=0){%>
+    <div class="search">
+        <form action="/search" method="post">
+            <label  for="search">Enter your city</label>
+            <input name="search" id="search" type="text">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <ul>
         <% for(let user of userData){%>
         <li class="listdc">
