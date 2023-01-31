@@ -4,7 +4,8 @@
 *{
     margin:0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     
 }
@@ -23,7 +24,8 @@ body{
     background-color: white;
     margin: 6vh 4vw;
     border: solid rgb(174, 167, 167);
-    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 .donationimg{
@@ -46,7 +48,8 @@ body{
     margin: 3vh 3vw;
     font-size: 1rem;
     font-weight: 600;
-    font-family: 'Noto Sans', sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #headingwhy{
     text-align: center;

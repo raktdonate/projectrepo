@@ -11,9 +11,11 @@
 }
 .box1{
     margin: 3vh;
+    margin-top: 4.5vh;
     width: 68vw;
-    height: 45vh;
-    /* background-color: aqua; */
+    height: 47vh;
+    margin-left: 2vw;
+   
 }
 .box1 img{
     width: 65vw;
@@ -33,7 +35,7 @@
     
 }
 .lining{
-    margin-top: 3vh;
+    margin-top: 4vh;
 }
 .box2 a{
     text-decoration: none;
@@ -42,25 +44,27 @@
     border: 3px solid #b91816;
     border-radius: 15px;
     padding: 3px 4px;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
    width: 5vw;
    height: 4vh;
-   margin-left: 3.4vw;
+   margin-left: 6.3vw;
    margin-bottom: 2vh;
 
 }
 .listdc{
-    width: 90%;
+    width: 95vw;
     height: 20vh;
-    background-color: rgb(249, 187, 183);
+    background-color: white;
+    /* border: 2px solid #b91816; */
+    box-shadow: 3px 5px 4px gray;
     margin-top: 5vh;
-    margin-left: 5vw;
+    margin-left: 1.8vw;
     border-radius: 2vh;
     display: flex;
 }
 .listdcdiv{
     position: relative;
-    left: 3vw;
+    left: 4vw;
     top: 3vh;
     
    font-size: 1.5vw;
@@ -99,12 +103,15 @@ form label{
     
 }
 form input{
-    font-size: 1.5rem;
-    width: 22vw;
+    font-size: 1rem;
+    width: 15vw;
     height: 4vh;
+    color: #b91816;
     background-color: white;
     border: 2px solid #b91816;
-    margin-left: 3.4vw;
+    margin-left: 6vw;
+    border-radius: 13px;
+    padding-left: 4px;
 }
 .search{
     margin-top: 4vh;
@@ -112,10 +119,11 @@ form input{
 }
 .btndonor{
     width: 10vw;
-    height: 5vh;
+    height: 5.2vh;
     border-radius: 16px;
     border:2px solid #b91816;
-    margin-left: 8.2vw;
+    margin-left: 8.7vw;
+   
 }
 #communa{
     font-size: 1.2rem;
