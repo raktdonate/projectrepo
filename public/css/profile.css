@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.mainbox{
+    height: 85vh;
+    width: 100vw;
+    background-color: rgb(215, 213, 213);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.mainbox1{
+    position: relative;
+    top: 10vh;
+    height: 50vh;
+    width: 60vw;
+    background-color: white;
+    /* display: flex */
+}
+.mainbox1form{
+    display: flex;
+}
+.mainbox1a{
+    width: 27vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 3vw;
+    /* align-items: center; */
+    font-size: 2vw;
+}
+.mainbox1a label{
+    margin-left: 3.4vw;
+    font-size: 2.2vw;
+    font-weight: 400;
+    width: 14vw;
+    padding: 5px;
+    border: 3px solid rgb(97, 93, 93);
+    background-color: rgb(198, 195, 195);
+    border-radius: 8px;
+}
+.mainbox1a input{
+    /* padding-left: 6px; */
+    font-size: 1.4vw;
+    margin-top: 2vh;
+    margin-left: 2vw;
+}
+.mainbox1a img{
+    height: 30vh;
+    width: 20vw;
+}
+.mainbox1b{
+    width: 33vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    /* align-items: center; */
+}
+.mainbox1b a{
+    font-size: 1.6vw;
+    margin-top: 4vw;
+    text-decoration: none;
+    color: black;
+}
+.mainbox1b button{
+    margin-top: 5vw;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 4px;
+}
+.mainbox1b label{
+    font-size: 2.5vw;
+    position: relative;
+    top: 3vw;
+}
+.mainbox1b input{
+    position: relative;
+    top: 3vw;
+    height: 7vh;
+    width: 14vw;
+    background-color: rgb(235, 233, 233);
+    border-radius: 7px;
+    padding: 5px;
+    margin-top: 6px;
+    font-size: 1.4vw;
+}

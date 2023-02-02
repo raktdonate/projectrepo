@@ -21,6 +21,9 @@ const userSchema =new Schema({
     },
     isDonor:{
         type:Boolean
+    },
+    blood:{
+        type:String
     }
 })
 module.exports=mongoose.model('User',userSchema)

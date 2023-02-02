@@ -1,3 +1,4 @@
+const { response } = require('express')
 const User=require('../model/user')
 
 exports.getIndex=(req,res,next)=>{
@@ -45,7 +46,9 @@ exports.postJoinCommunity=(req,res,next)=>{
     }
     const city=req.body.city
     const contact=req.body.contact
+    const blood=req.body.blood
     req.user.city=city
+    req.user.blood=blood
     req.user.contact=contact
     req.user.isDonor=true;
     req.user.save().then(result=>{
@@ -71,8 +74,18 @@ exports.postSearch=(req,res,next)=>{
     })
 }
 exports.getProfile=(req,res,next)=>{
+    const edit=req.query.edit
+
     res.render('profile',{
         pageTitle:'Home Page',
-        isAuth:req.session.isLoggedIn
+        isAuth:req.session.isLoggedIn,
+        edit:edit,
+        userData:req.user
+    })
+}
+exports.postChanges=(req,res,next)=>{
+    req.user.username=req.body.username
+    req.user.save().then(result=>{
+        res.redirect('/')
     })
 }
