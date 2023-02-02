@@ -15,4 +15,6 @@ router.post('/search',mainController.postSearch)
 
 router.get('/profile',mainController.getProfile);
 
+router.post('/editprofile',mainController.postChanges)
+
 module.exports=router
