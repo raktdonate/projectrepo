@@ -10,10 +10,39 @@ exports.getLogin=(req,res,next)=>{
 }
 
 exports.postLogin=(req,res,next)=>{
-    req.session.isLoggedIn=true
+
     const email=req.body.email
     const password=req.body.password
-    res.redirect('/');
+
+    User.findOne({email:email})
+        .then(user=>{
+            if(!user){
+                return res.redirect('/login')
+            }
+            bcrypt.compare(password,user.password)
+            .then(doMatch=>{
+                if(doMatch){
+                    req.session.isLoggedIn=true
+                    req.session.user=user
+                    return req.session.save(result=>{
+                        res.redirect('/')
+                    })
+                }
+                return res.render('auth/login',{
+                    path: '/login',
+                    pageTitle: 'Login',
+                    isAuthenticated: false,
+                })
+            })
+
+            
+            req.session.isLoggedIn=true
+            req.session.user=user
+            return res.redirect('/')
+        })
+        .catch(err=>{
+            console.log(err)
+        })
 }
 
 exports.getSignup=(req,res,next)=>{
