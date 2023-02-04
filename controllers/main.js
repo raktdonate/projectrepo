@@ -75,12 +75,11 @@ exports.postSearch=(req,res,next)=>{
 }
 exports.getProfile=(req,res,next)=>{
     const edit=req.query.edit
-
     res.render('profile',{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,
         edit:edit,
-        userData:req.user
+        userData:req.session.user
     })
 }
 exports.postChanges=(req,res,next)=>{

@@ -38,8 +38,6 @@ app.use((req, res, next) => {
 app.use(mainRoutes)
 app.use(authRoutes)
 app.use(errorController.getError);
-
-
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(result=>{  
