@@ -51,6 +51,9 @@ body{
     /* font-family: 'Noto Sans', sans-serif; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.p1{
+    font-size: 0.9rem;
+}
 #headingwhy{
     text-align: center;
     font-weight: bolder;
@@ -98,18 +101,25 @@ body{
 }
 .inp{
     justify-content: center;
-    height: 12vh;
+    height: 7vh;
     width: 40vw;
     border-radius: 13px ;
     border: solid #b91816;
     padding: 4px;
-    margin-top: 4vh;
+    margin-top: 2.2vh;
     margin-left: 8vw;
 
 
 }
+.box3 label{
+    font-size: 1rem;
+    margin-left: 8vw;
+    padding-top: 1.3vh;
+}
 .inplast{
     width:41vw ;
+    margin-top: 4vh;
+    height: 10vh;
 }
 .btn{
     width: 10vw;
@@ -161,4 +171,12 @@ body{
     height: 17vh;
     width: 100vw;
     background-color: gray;
+}
+#health{
+    margin-top: 3.2vh;
+    margin-bottom: 2.5vh;
+    /* margin-left: 3vw; */
+    color: #b91816;
+    font-size: 2.1rem;
+    text-align: center;
 }
