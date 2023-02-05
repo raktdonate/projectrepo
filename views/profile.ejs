@@ -5,17 +5,22 @@
     <%- include('./includes/navbar.ejs')%>
     <div class="mainbox">
         <div class="mainbox1">
-            
-            <form class="mainbox1form" action="/editprofile" method="post">
+            <form class="mainbox1form" action="/editprofile" method="post" enctype="multipart/form-data">
                 <div class="mainbox1a">
-                    <img src="images/profile.jpg" alt="">
+                    <% if(userData.profileUrl){%>
+                        <img class="img" src="<%=userData.profileUrl%>" alt="">
+                    <%}else{%>
+                        <img class="img" src="images/profile.jpg" alt="">
+                    <%}%>
+                    
                     <% if(edit){%>
-                    <label for="profilepic"> Change Profile</label>
-                    <input hidden type="file" name="profilepic" id="profilepic">
+                    <label for="image"> Change Profile</label>
+                    <input hidden type="file" name="image" id="image">
                     <%}%>
                 </div>
                 <div class="mainbox1b">
                     <% if(edit){%>
+                        <!-- <p></p> -->
                         <label for="username">Username</label>
                         <input value="<%=userData.username%>" name="username" id="username" type="text">
                         <label for="email">Email</label>

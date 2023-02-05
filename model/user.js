@@ -24,6 +24,9 @@ const userSchema =new Schema({
     },
     blood:{
         type:String
+    },
+    profileUrl:{
+        type:String
     }
 })
 module.exports=mongoose.model('User',userSchema)
