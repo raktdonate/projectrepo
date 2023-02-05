@@ -25,7 +25,12 @@
                         <button type="submit">Logout</button>
                     </form> -->
                     <div class="dropdown">
-                        <button class="dropbtn"><img id="profileimg" class="profileimg" src="images/pro.png" alt="profile"></button>
+                        <% if(userData.profileUrl){%>
+                            <button class="dropbtn"><img id="profileimg" class="profileimg" src="/<%=userData.profileUrl%>" alt="profile"></button>
+                        <%}else{%>
+                            <button class="dropbtn"><img id="profileimg" class="profileimg" src="images/profile.jpg" alt="profile"></button>
+                        <%}%>
+                        
                         <div class="dropdown-content">
                           <a href="/profile">Profile</a>
                           <a href="/joincommunity">Join Community</a>

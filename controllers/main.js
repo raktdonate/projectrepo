@@ -1,10 +1,13 @@
-const { response } = require('express')
+
 const User=require('../model/user')
+const fileHelper=require('../utils/file')
 
 exports.getIndex=(req,res,next)=>{
+    // console.log(req.user)
     res.render('index',{
         pageTitle:'Home Page',
-        isAuth:req.session.isLoggedIn
+        isAuth:req.session.isLoggedIn,
+        userData:req.user
     })
 }
 exports.getDonorCommunity=(req,res,next)=>{
@@ -12,7 +15,8 @@ exports.getDonorCommunity=(req,res,next)=>{
         res.render('donor_community',{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
-            userData:users
+            userData2:users,
+            userData:req.user
         })
     })
     
@@ -26,7 +30,8 @@ exports.getJoinCommunity=(req,res,next)=>{
         res.render('joincommunity',{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
-            userData:users
+            userData2:users,
+            userData:req.user
         })
     })
     
@@ -79,10 +84,18 @@ exports.getProfile=(req,res,next)=>{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,
         edit:edit,
-        userData:req.session.user
+        userData:req.user
     })
 }
 exports.postChanges=(req,res,next)=>{
+    const image=req.file
+    
+    if(image){
+        if(req.user.profileUrl){
+            fileHelper.deleteFile(req.user.profileUrl);
+        }
+        req.user.profileUrl=image.path
+    }
     req.user.username=req.body.username
     req.user.save().then(result=>{
         res.redirect('/')
