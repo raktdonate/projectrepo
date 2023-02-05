@@ -36,9 +36,7 @@ exports.postLogin=(req,res,next)=>{
             })
 
             
-            req.session.isLoggedIn=true
-            req.session.user=user
-            return res.redirect('/')
+           
         })
         .catch(err=>{
             console.log(err)
