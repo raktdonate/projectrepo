@@ -12,30 +12,47 @@
 .box1{
     margin: 3vh;
     margin-top: 4.5vh;
-    width: 68vw;
+    width: 55vw;
     height: 47vh;
     margin-left: 2vw;
    
 }
 .box1 img{
-    width: 65vw;
+    width: 53vw;
     height: 45vh;
     /* border-radius: 9px; */
 }
 .box2{
   
     height: 42vh;
-    width: 30vw;
+    width: 45vw;
  font-size: 3vw;
     font-weight: 600;
     /* background-color: #b91816; */
     /* background-color: yellow; */
-   margin-top: 5vh;
+   margin-top: 2vh;
 
     
 }
+form input{
+    font-size: 1rem;
+    width: 15vw;
+    height: 4vh;
+    color: #b91816;
+    background-color: white;
+    border: 2px solid #b91816;
+    margin-left: 3vw;
+    border-radius: 13px;
+    padding-left: 4px;
+}
+.search{
+    margin-top: vw;
+}
+.inputb{
+    margin-left: 1vw;
+}
 .lining{
-    margin-top: 4vh;
+    margin-top: 2vh;
 }
 .box2 a{
     text-decoration: none;
@@ -48,7 +65,7 @@
    width: 5vw;
    height: 4vh;
    margin-left: 6.3vw;
-   margin-bottom: 2vh;
+   margin-bottom: 1vh;
 
 }
 .listdc{
@@ -102,32 +119,19 @@ form label{
     margin-left: 5.8vw;
     
 }
-form input{
-    font-size: 1rem;
-    width: 15vw;
-    height: 4vh;
-    color: #b91816;
-    background-color: white;
-    border: 2px solid #b91816;
-    margin-left: 6vw;
-    border-radius: 13px;
-    padding-left: 4px;
-}
-.search{
-    margin-top: 4vh;
 
-}
 .btndonor{
-    width: 10vw;
-    height: 5.2vh;
+    width: 11vw;
+    height: 5.8vh;
     border-radius: 16px;
     border:2px solid #b91816;
-    margin-left: 8.7vw;
+    margin-left: 5.8vw;
+    font-size: 1.6vw;
    
 }
 #communa{
-    font-size: 1.2rem;
+    font-size: 2vw;
     margin-left: 6.2vw;
-    margin-bottom: 2vh;
+    margin-bottom: 1.6vh;
     color: orangered;
 }
