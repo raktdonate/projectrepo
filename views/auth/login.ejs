@@ -1,5 +1,9 @@
 <%- include('../includes/head.ejs')%>
 <link rel="stylesheet" href="css/login.css">
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
+
 </head>
 <body>
     <%- include('../includes/navbar.ejs')%>
@@ -11,10 +15,11 @@
           <input name="email" id="email" type="email" placeholder="" />
           <label>Password</label>
           <input name="password" id="password" type="password" placeholder="" />
+          <div id="toggler" onclick="showHide()"><img class="img" src="images/eye.png" alt=""></div>
           <button class="btnlogin" type="submit">Login</button>
         </form>
         <p class="para-2">
-          Don't have an account? <a href="signup">Sign Up Here</a>
+          Don't have an account? <a href="/signup">Sign Up Here</a>
         </p>
       </div>
 <%- include('../includes/tail.ejs')%>
