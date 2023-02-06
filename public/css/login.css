@@ -75,5 +75,14 @@ body {
   .para-2 a {
     color: #b91816;
   }
+  #toggler{
+    position: relative;
+    left: 23vw;
+    bottom: 5vh;
+  }
+  #toggler img{
+    height: 3.5vh;
+    width: 2vw;
+  }
   
   

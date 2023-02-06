@@ -1,5 +1,6 @@
 const User = require('../model/user');
 const bcrypt=require("bcryptjs")
+const {validationResult}=require('express-validator/check')
 
 exports.getLogin=(req,res,next)=>{
     res.render('auth/login',{
@@ -13,11 +14,28 @@ exports.postLogin=(req,res,next)=>{
 
     const email=req.body.email
     const password=req.body.password
+    const errors=validationResult(req)
+    
+    if(!errors.isEmpty()){
+        return res.render('auth/signup',{
+            path:'/login',
+            pageTitle:'Login',
+            isAuth:false,
+            errorMessage:errors.array()[0].msg
+            
+        })
+    }
 
     User.findOne({email:email})
         .then(user=>{
             if(!user){
-                return res.redirect('/login')
+                return res.redirect('auth/login',{
+                    path:'/login',
+                    pageTitle:'Login',
+                    errorMessage:'Invalid email or password',
+                    isAuth:false,
+                    validationError:[]
+                })
             }
             bcrypt.compare(password,user.password)
             .then(doMatch=>{
@@ -31,12 +49,11 @@ exports.postLogin=(req,res,next)=>{
                 return res.render('auth/login',{
                     path: '/login',
                     pageTitle: 'Login',
-                    isAuthenticated: false,
+                    isAuth: false,
+                    errorMessage:'Invalid email or password',
+                    validationError:[]
                 })
-            })
-
-            
-           
+            })       
         })
         .catch(err=>{
             console.log(err)
@@ -66,8 +83,18 @@ exports.postSignup=(req,res,next)=>{
     const username=req.body.username
     const email=req.body.email
     const password=req.body.password
+    const errors=validationResult(req)
     console.log(username,email,password)
- 
+    if(!errors.isEmpty()){
+        console.log(errors.array())
+        console.log('error')
+        return res.render('auth/signup',{
+            path:'/signup',
+            pageTitle:'Signup',
+            isAuth:false,
+            errorMessage:errors.array()[0].msg
+        })
+    }
     bcrypt.hash(password,12)
         .then(hashedPassword=>{
             const user=new User({
