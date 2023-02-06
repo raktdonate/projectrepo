@@ -61,22 +61,55 @@ exports.postJoinCommunity=(req,res,next)=>{
             res.render('donor_community',{
                 pageTitle:'Home Page',
                 isAuth:req.session.isLoggedIn,
-                userData:users
+                userData2:users
             })
         })
     })
     // console.log(name,email,city,contact)
 }
 exports.postSearch=(req,res,next)=>{
-    const city=req.body.search
-    console.log(city)
-    User.find({isDonor:true,city:city}).then(users=>{
-        res.render('donor_community',{
-            pageTitle:'Home Page',
-            isAuth:req.session.isLoggedIn,
-            userData:users
+    const blood=req.body.blood
+    const city=req.body.city
+    if(city.length==0&&blood.length==0){
+        User.find({isDonor:true}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
         })
-    })
+    }
+    else if(city.length==0){
+        User.find({isDonor:true,blood:blood}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else if(blood.length==0){
+        User.find({isDonor:true,city:city}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else{
+        User.find({isDonor:true,city:city,blood:blood}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
 }
 exports.getProfile=(req,res,next)=>{
     const edit=req.query.edit
