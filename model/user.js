@@ -30,5 +30,9 @@ const userSchema =new Schema({
     },
     resetToken: String,
     resetTokenExpiration: Date,
+    // isAdmin:Boolean,
+    isAdmin:{
+        type:Boolean
+    }
 })
 module.exports=mongoose.model('User',userSchema)

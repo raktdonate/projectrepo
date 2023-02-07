@@ -3,7 +3,7 @@ const User=require('../model/user')
 const fileHelper=require('../utils/file')
 
 exports.getIndex=(req,res,next)=>{
-    // console.log(req.user)
+    console.log(req.user)
     res.render('index',{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,

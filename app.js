@@ -4,6 +4,7 @@ const path=require('path')
 const bodyparser=require('body-parser')
 const mainRoutes=require('./routes/mainRoutes')
 const authRoutes=require('./routes/authRoutes')
+const adminRoutes=require('./routes/adminRoutes')
 const session=require('express-session')
 const MongoDBStore=require('connect-mongodb-session')(session)
 const errorController=require('./controllers/error')
@@ -57,6 +58,7 @@ app.use((req, res, next) => {
 
 app.use(mainRoutes)
 app.use(authRoutes)
+app.use(adminRoutes)
 app.use(errorController.getError);
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true })

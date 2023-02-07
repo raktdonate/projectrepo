@@ -24,9 +24,13 @@ router.post('/login',
 
 router.get('/logout',authController.postLogout)
 
-router.get('/signup',authController.getSignup)
+router.get('/signup',authController.getSignupMain)
 
-router.post('/signup',
+router.get('/usersignup',authController.getSignupUser)
+
+router.get('/ngosignup',authController.getSignupNgo)
+
+router.post('/signupuser',
     [
         body('email')
             .isEmail()
@@ -46,7 +50,11 @@ router.post('/signup',
             .isAlphanumeric()
             .trim()
     ]
-    ,authController.postSignup)
+    ,authController.postSignupUser)
+
+router.post('/signupngo',authController.postSignupNgo)
+
+// router.get('/message')
 
 router.get('/reset',authController.getReset)
 
@@ -55,5 +63,6 @@ router.post('/reset',authController.postReset)
 router.get('/reset/:token', authController.getNewPassword);
 
 router.post('/new-password', authController.postNewPassword);
+
 
 module.exports=router
