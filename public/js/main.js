@@ -7,7 +7,8 @@ btn.addEventListener('click',()=>{
     }
     a++;
     // console.log(input[0],input[1])
-    if(input[0].value>=18&&input[1].value>=40&&input[4].value==='Female'){
+    console.log(input[3].value)
+    if(input[0].value>=18&&input[0].value<=65&&input[1].value>=50&&input[2].value>=12.0){
         var tag = document.createElement("p");
         var text = document.createTextNode("You are eligible to donate!!");
         tag.appendChild(text);
