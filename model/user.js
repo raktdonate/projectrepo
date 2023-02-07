@@ -27,6 +27,8 @@ const userSchema =new Schema({
     },
     profileUrl:{
         type:String
-    }
+    },
+    resetToken: String,
+    resetTokenExpiration: Date,
 })
 module.exports=mongoose.model('User',userSchema)
