@@ -8,6 +8,8 @@ router.get('/',mainController.getIndex)
 
 router.get('/donorcommunity',mainController.getDonorCommunity)
 
+router.get('/ngocommunity',mainController.getNgoCommunity)
+
 router.post('/joincommunity',mainController.postJoinCommunity)
 
 router.get('/joincommunity',mainController.getJoinCommunity)

@@ -1,5 +1,6 @@
 
 const User=require('../model/user')
+const Ngo=require('../model/ngo')
 const fileHelper=require('../utils/file')
 
 exports.getIndex=(req,res,next)=>{
@@ -132,5 +133,15 @@ exports.postChanges=(req,res,next)=>{
     req.user.username=req.body.username
     req.user.save().then(result=>{
         res.redirect('/')
+    })
+}
+exports.getNgoCommunity=(req,res,next)=>{
+    Ngo.find({isPermit:true}).then(ngos=>{
+        res.render('ngo_community',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData2:ngos,
+            userData:req.user
+        })
     })
 }

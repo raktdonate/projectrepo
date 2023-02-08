@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
 );
 
 exports.getList=(req,res,next)=>{
-    Ngo.find({isPermit:false}).then(ngos=>{
+    Ngo.find({isPermit:undefined}).then(ngos=>{
         res.render('admin/ngolist',{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,

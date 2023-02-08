@@ -5,7 +5,7 @@ const ngoSchema =new Schema({
         type:String,
         required:true
     },
-    name:{
+    username:{
         type:String,
         required:true
     },
@@ -29,6 +29,9 @@ const ngoSchema =new Schema({
         type:Boolean
     },
     password:{
+        type:String
+    },
+    profileUrl:{
         type:String
     }
 })

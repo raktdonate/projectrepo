@@ -52,6 +52,7 @@ exports.postLogin = (req, res, next) => {
   }
   else {
     if (!errors.isEmpty()) {
+      console.log('a')
       return res.render('auth/signup', {
         path: '/login',
         pageTitle: 'Login',
@@ -64,19 +65,35 @@ exports.postLogin = (req, res, next) => {
     User.findOne({ email: email })
       .then(user => {
         if (!user) {
-          return res.redirect('auth/login', {
-            path: '/login',
-            pageTitle: 'Login',
-            errorMessage: 'Invalid email or password',
-            isAuth: false,
-            validationError: []
+          console.log('b')
+          return Ngo.findOne({email:email,password:password,isPermit:true})
+            .then(ngo=>{
+              req.session.isLoggedIn = true
+              req.session.user = ngo
+              req.session.login="ngo"
+              return req.session.save(result => {
+                console.log('z')
+                res.redirect('/')
+              })
+            })
+            .catch(err=>{
+
           })
+          // return res.redirect('auth/login', {
+          //   path: '/login',
+          //   pageTitle: 'Login',
+          //   errorMessage: 'Invalid email or password',
+          //   isAuth: false,
+          //   validationError: []
+          // })
         }
+        console.log('c')
         bcrypt.compare(password, user.password)
           .then(doMatch => {
             if (doMatch) {
               req.session.isLoggedIn = true
               req.session.user = user
+              req.session.login="user"
               return req.session.save(result => {
                 res.redirect('/')
               })
@@ -176,7 +193,7 @@ exports.postSignupNgo = (req, res, next) => {
     contact: contact,
     city: city,
     email: email,
-    name: name,
+    username: name,
     regno: regno,
     state: state
   })
