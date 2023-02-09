@@ -1,10 +1,14 @@
-const { response } = require('express')
+
 const User=require('../model/user')
+const Ngo=require('../model/ngo')
+const fileHelper=require('../utils/file')
 
 exports.getIndex=(req,res,next)=>{
+    console.log(req.user)
     res.render('index',{
         pageTitle:'Home Page',
-        isAuth:req.session.isLoggedIn
+        isAuth:req.session.isLoggedIn,
+        userData:req.user
     })
 }
 exports.getDonorCommunity=(req,res,next)=>{
@@ -12,7 +16,8 @@ exports.getDonorCommunity=(req,res,next)=>{
         res.render('donor_community',{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
-            userData:users
+            userData2:users,
+            userData:req.user
         })
     })
     
@@ -26,7 +31,8 @@ exports.getJoinCommunity=(req,res,next)=>{
         res.render('joincommunity',{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
-            userData:users
+            userData2:users,
+            userData:req.user
         })
     })
     
@@ -56,22 +62,55 @@ exports.postJoinCommunity=(req,res,next)=>{
             res.render('donor_community',{
                 pageTitle:'Home Page',
                 isAuth:req.session.isLoggedIn,
-                userData:users
+                userData2:users
             })
         })
     })
     // console.log(name,email,city,contact)
 }
 exports.postSearch=(req,res,next)=>{
-    const city=req.body.search
-    console.log(city)
-    User.find({isDonor:true,city:city}).then(users=>{
-        res.render('donor_community',{
-            pageTitle:'Home Page',
-            isAuth:req.session.isLoggedIn,
-            userData:users
+    const blood=req.body.blood
+    const city=req.body.city
+    if(city.length==0&&blood.length==0){
+        User.find({isDonor:true}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
         })
-    })
+    }
+    else if(city.length==0){
+        User.find({isDonor:true,blood:blood}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else if(blood.length==0){
+        User.find({isDonor:true,city:city}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else{
+        User.find({isDonor:true,city:city,blood:blood}).then(users=>{
+            res.render('donor_community',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
 }
 exports.getProfile=(req,res,next)=>{
     const edit=req.query.edit
@@ -79,12 +118,30 @@ exports.getProfile=(req,res,next)=>{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,
         edit:edit,
-        userData:req.session.user
+        userData:req.user
     })
 }
 exports.postChanges=(req,res,next)=>{
+    const image=req.file
+    
+    if(image){
+        if(req.user.profileUrl){
+            fileHelper.deleteFile(req.user.profileUrl);
+        }
+        req.user.profileUrl=image.path
+    }
     req.user.username=req.body.username
     req.user.save().then(result=>{
         res.redirect('/')
+    })
+}
+exports.getNgoCommunity=(req,res,next)=>{
+    Ngo.find({isPermit:true}).then(ngos=>{
+        res.render('ngo_community',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData2:ngos,
+            userData:req.user
+        })
     })
 }

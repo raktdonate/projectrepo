@@ -13,17 +13,19 @@
             <hr class="lining">
             <div class="search">
                 <form action="/search" method="post">
-                    <label  for="search">Enter your city </label>
-                    <input name="search" required id="search" type="text">
+                    <label  for="city">Enter city </label>
+                    <input name="city" id="city" type="text">
+                    <label  for="blood">blood group</label>
+                    <input class="inputb" name="blood" id="blood" type="text">
                     <button class="btndonor" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </div>
-    <% if(userData.length>=0){%>
+    <% if(userData2.length>=0){%>
         <hr class="lining">
     <ul>
-        <% for(let user of userData){%>
+        <% for(let user of userData2){%>
         <li class="listdc">
             <div class="listdcdiv">
                 <p class="info">Name</p>

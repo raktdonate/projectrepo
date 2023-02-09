@@ -12,7 +12,7 @@ body {
   } */
   .signup-box {
     width:35vw;
-    height:80vh;
+    height:85vh;
     margin: 3.5vh auto;
     border-radius: 3px;
     background-color: white;
@@ -35,6 +35,7 @@ body {
   form label {
     display: flex;
     margin-top: 30px;
+    margin-bottom: 5px;
     font-size: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
@@ -52,7 +53,7 @@ body {
   .btnlogin {
     width: 7vw;
     height: 6vh;
-    margin-top: 5vh;
+    margin-top: -4vh;
     border:solid 2px gray;
     border-radius: 20px;
     background-color: #b91816;
@@ -77,5 +78,9 @@ body {
   .para-2 a {
     color: #b91816;
   }
-  
+  .imgtoggling{
+    position: relative;
+    bottom: 2.8vw;
+    left: 23vw;
+  }
   

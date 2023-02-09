@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+
   .login-box {
     width:35vw;
     height:80vh;
@@ -74,6 +74,21 @@ body {
   }
   .para-2 a {
     color: #b91816;
+  }
+  #toggler{
+    position: relative;
+    left: 23vw;
+    bottom: 5vh;
+  }
+  #toggler img{
+    height: 3.5vh;
+    width: 2vw;
+  }
+  .reset a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3vw;
+    
   }
   
   

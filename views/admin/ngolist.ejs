@@ -1,0 +1,24 @@
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="css/error.css">
+</head>
+<body>
+    <%- include('../includes/navbar.ejs')%>
+    <% if(ngos.length>=0){%>
+        <% for(let ngo of ngos){%>
+            <div>
+                <form action="/permit" method="post">
+                    <p><%=ngo.username%></p>
+                    <p><%=ngo.contact%></p>
+                    <p><%=ngo.email%></p>
+                    <p><%=ngo.state%></p>
+                    <p><%=ngo.city%></p>
+                    <p><%=ngo.regno%></p>
+                    <input name="ngoid" hidden type="text" value="<%=ngo._id%>">
+                    <button type="submit">Permit</button>
+                </form>
+            </div>
+        <%}%>
+    <%}%>
+    
+    
+<%- include('../includes/tail.ejs')%>

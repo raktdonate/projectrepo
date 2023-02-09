@@ -1,11 +1,7 @@
 const mongoose=require('mongoose')
 const Schema=mongoose.Schema
-const userSchema =new Schema({
+const ngoSchema =new Schema({
     email:{
-        type:String,
-        required:true
-    },
-    password:{
         type:String,
         required:true
     },
@@ -13,26 +9,30 @@ const userSchema =new Schema({
         type:String,
         required:true
     },
+    state:{
+        type:String,
+        required:true
+    },
     contact:{
-        type:Number
+        type:Number,
+        required:true
     },
     city:{
-        type:String
+        type:String,
+        required:true
     },
-    isDonor:{
+    regno:{
+        type:String,
+        required:true
+    },
+    isPermit:{
         type:Boolean
     },
-    blood:{
+    password:{
         type:String
     },
     profileUrl:{
         type:String
-    },
-    resetToken: String,
-    resetTokenExpiration: Date,
-    // isAdmin:Boolean,
-    isAdmin:{
-        type:Boolean
     }
 })
-module.exports=mongoose.model('User',userSchema)
+module.exports=mongoose.model('Ngo',ngoSchema)

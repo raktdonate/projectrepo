@@ -65,6 +65,9 @@ body{
     /* font-family: 'Noto Sans', sans-serif; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.p1{
+    font-size: 0.9rem;
+}
 #headingwhy{
     text-align: center;
     font-weight: bolder;
@@ -95,6 +98,14 @@ body{
     margin: 2vh 3vw;
     /* background-color: red; */
 }
+.eligibilitybox p{
+    font-size: 1.5vw;
+    font-weight: 300;
+    /* border: 2px solid rgb(182, 176, 176); */
+    /* margin-left: 2vw; */
+    padding-left: 20vw;
+    margin-top: 1vw;
+}
 #eligibilityhead{
     text-align: center;
     font-size: 2.7rem;
@@ -114,19 +125,26 @@ body{
 }
 .inp{
     justify-content: center;
-    height: 12vh;
+    height: 7vh;
     width: 40vw;
     border-radius: 13px ;
     border: solid #E63838
     ;
     padding: 4px;
-    margin-top: 4vh;
+    margin-top: 2.2vh;
     margin-left: 8vw;
 
 
 }
+.box3 label{
+    font-size: 1rem;
+    margin-left: 8vw;
+    padding-top: 1.3vh;
+}
 .inplast{
     width:41vw ;
+    margin-top: 4vh;
+    height: 10vh;
 }
 .btn{
     width: 10vw;

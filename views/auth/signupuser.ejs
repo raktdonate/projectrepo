@@ -4,14 +4,15 @@
     <body>
         <%- include('../includes/navbar.ejs')%>
         <div class="signup-box">
-          <h1>Sign Up</h1>
-        <form action="/signup" method="post">
+          <h1>User Sign Up</h1>
+        <form action="/signupuser" method="post">
             <label>Username</label>
             <input name="username" id="Username" type="text" placeholder="" />
             <label>Email</label>
             <input name="email" id="email" type="email" placeholder="" />
             <label>Password</label>
             <input name="password" id="password" type="password" placeholder="" />
+            <div id="toggler" onclick="showHide()"><img class="img imgtoggling" src="images/eye.png" alt=""></div>
             <button class="btnlogin" type="submit">Signup</button>
         </form>
           <p class="para-2">
