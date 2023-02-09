@@ -5,11 +5,11 @@
     <% if(userData2.length>=0){%>
         <% for(let ngo of userData2){%>
             <p>----------------------------------------------</p>
-            <p>ngo.username</p>
-            <p>ngo.email</p>
-            <p>ngo.state</p>
-            <p>ngo.contact</p>
-            <p>ngo.city</p>
+            <p><%=ngo.username%></p>
+            <p><%=ngo.email%></p>
+            <p><%=ngo.state%></p>
+            <p><%=ngo.contact%></p>
+            <p><%=ngo.city%></p>
             <p>----------------------------------------------</p>
         <%}%>
     <%}%>

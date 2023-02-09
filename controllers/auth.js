@@ -53,7 +53,7 @@ exports.postLogin = (req, res, next) => {
   else {
     if (!errors.isEmpty()) {
       console.log('a')
-      return res.render('auth/signup', {
+      return res.render('auth/login', {
         path: '/login',
         pageTitle: 'Login',
         isAuth: false,
