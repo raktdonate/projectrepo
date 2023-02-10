@@ -3,59 +3,90 @@
 </head>
 <body>
     <%- include('./includes/navbar.ejs')%> 
-    <div class="box">
-        <div class="box1">
-            <img src="images/community.jpg" alt="">
+    <div class="mainna">
+        <div class="box">
+            <div class="box1">
+                <img src="images/communitybg.png" alt="">
+            </div>
+            <div class="paraboxn">
+                <h1>Donor Community</h1>
+                <p>A community for the donors to directly communicate with the people in need of blood transfusion</p>
+    
+                <div class="joinbox">
+                    <a href="/joincommunity">Join our community ---></a>
+                </div>
+            </div>
+            
         </div>
         <div class="box2">
-            <p id="communa">To join our community</p>
+            <!-- <p id="communa">To join our community</p>
             <a href="/joincommunity">Join Community</a>
-            <hr class="lining">
+        
+            <hr class="lining"> -->
+            <div class="infinity">
+                
+                <video class="vid" width="450" height="300" autoplay>
+                    <source src="images/SearchDonor.mp4" type="video/mp4">
+                   
+                  </video>
+            </div>
             <div class="search">
+                <h4 id="searchinghead">Search</h4>
                 <form action="/search" method="post">
                     <label  for="city">Enter city </label>
-                    <input name="city" id="city" type="text">
-                    <label  for="blood">blood group</label>
-                    <input class="inputb" name="blood" id="blood" type="text">
+                    <input name="city" id="city" type="text" placeholder="Enter your city">
+                    <label  for="blood">Blood group</label>
+                    <input class="inputb" name="blood" id="blood" type="text" placeholder="Enter your blood group">
                     <button class="btndonor" type="submit">Search</button>
                 </form>
             </div>
         </div>
+        <div class="boxaaa">
+            <% if(userData2.length>=0){%>
+                <!-- <hr class="lining"> -->
+            <ul>
+                <% for(let user of userData2){%>
+                <li class="listdc">
+                    <div class="listdcdiv">
+                        
+                        <p class="info">Name</p>
+                        <p><%=user.username%></p>
+                    </div>
+                    <div class="listdcdiv">
+                        <p class="info">City</p>
+                        <p><%=user.city%></p>
+                    </div>
+                    <!-- <div class="listdcdiv">
+                        <p class="info">Chat</p>
+                        <p>Click here to chat</p>
+                    </div> -->
+                    <div class="listdcdiv">
+                        <p class="info">Blood group</p>
+                        <p><%=user.blood%></p>
+                    </div>
+                    <!-- <div class="listdcdiv">
+                        <p class="info">Contact Number</p>
+                        <p><%=user.contact%></p>
+                    </div> -->
+                    <div class="listdcdiv">
+                        <p class="info chat" > <a href="chat">Chat here</a></p>
+                       
+                    </div>
+        
+                    <div class="listdcdiv">
+                        <p class="info">Email</p>
+                        <p><%=user.email%></p>
+                    </div>
+                </li>
+                <%}%>
+            </ul>
+            <%}else{%>
+                <p>empty community</p>
+            <%}%>
+            
+        </div>
     </div>
-    <% if(userData2.length>=0){%>
-        <hr class="lining">
-    <ul>
-        <% for(let user of userData2){%>
-        <li class="listdc">
-            <div class="listdcdiv">
-                <p class="info">Name</p>
-                <p><%=user.username%></p>
-            </div>
-            <div class="listdcdiv">
-                <p class="info">City</p>
-                <p><%=user.city%></p>
-            </div>
-            <!-- <div class="listdcdiv">
-                <p class="info">Chat</p>
-                <p>Click here to chat</p>
-            </div> -->
-            <div class="listdcdiv">
-                <p class="info">Blood group</p>
-                <p><%=user.blood%></p>
-            </div>
-            <div class="listdcdiv">
-                <p class="info">Contact Number</p>
-                <p><%=user.contact%></p>
-            </div>
-            <div class="listdcdiv">
-                <p class="info">Email</p>
-                <p><%=user.email%></p>
-            </div>
-        </li>
-        <%}%>
-    </ul>
-    <%}else{%>
-        <p>empty community</p>
-    <%}%>
+    
+    
     
 <%- include('./includes/tail.ejs')%>

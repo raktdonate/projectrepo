@@ -6,7 +6,7 @@
     padding: 0;
     /* font-family: 'Source Sans Pro', sans-serif; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    /* background-color: #ffe9f4; */
     
 }
 body{
@@ -16,25 +16,34 @@ body{
 
 .box1{
     display: flex;
-    height: 82vh ;
+    height: 75vh ;
+     background-color: #ffe9f4; 
+     color: #e63838;
+     /* background-color: #e63838; */
 }
-.boxwhy{
+.boxref a{
+    height: 4vh;
+    width: 9vw;
+    color: #e63838;
+    background-color: white;
+}
+/* .boxwhy{
     width: 60vw;
     height: 75vh;
     background-color: white;
     margin: 6vh 4vw;
     border: solid rgb(174, 167, 167);
     /* font-family: 'Source Sans Pro', sans-serif; */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 
-}
-.donationimg{
+/* }  */
+/* .donationimg{
     width: 38vw;
     height: 75vh;
    
     margin: 6vh 4vw;
-}
-#imagedonation{
+} */
+/* #imagedonation{
     text-align: center;
     color: #b91816;
     font-size: 5rem;
@@ -49,9 +58,9 @@ body{
     font-size: 1rem;
     font-weight: 600;
     /* font-family: 'Noto Sans', sans-serif; */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.p1{
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+/* } */ 
+/* .p1{
     font-size: 0.9rem;
 }
 #headingwhy{
@@ -60,17 +69,37 @@ body{
     color: #b91816;
     font-family: 'Source Sans Pro', sans-serif;
 
-}
+} */
 .box2{
     display: flex;
-    margin: 4vh 3vw;
+    /* margin: 4vh 3vw; */
     border-radius: 5px;
-    border: solid rgb(173, 170, 170);
+    /* border: solid #e63838; */
     height: 90vh;
+    background-color: #ffe9f4;
 }
 .dropbox{
-    height: 80vh;
-    width: 30vw;
+    /* height: 72vh;
+    width: 35vw;
+    background-color: #e63838;
+    border-radius: 28px ;
+    margin-top: 8vh;*/
+     margin-left: 4vw; 
+}
+.para{
+    font-size: 1rem;
+    padding-top: 2.4vh;
+    color: white;
+    margin-left: 1.6vw;
+    padding-top: 3.2vh;
+}
+.boxn{
+    height: 65vh;
+    width: 38vw;
+    background-color: #e63838;
+    border-radius: 28px ;
+    margin-top: 3vh;
+    margin-left: 4vw;
 }
 .imagedrop{
     height:28vh ;
@@ -79,8 +108,8 @@ body{
 }
 .eligibilitybox{
     height: 75vh;
-    width: 60vw;
-    margin: 2vh 3vw;
+    width: 49vw;
+    margin: 2vh 1vw;
     /* background-color: red; */
 }
 .eligibilitybox p{
@@ -93,10 +122,10 @@ body{
 }
 #eligibilityhead{
     text-align: center;
-    font-size: 2.7rem;
-    color: #b91816;
-    font-family: 'Source Sans Pro', sans-serif;
-
+    font-size: 2.2rem;
+    color: black;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-weight: 300;
 }
 .box3{
     display: flex;
@@ -110,9 +139,9 @@ body{
 .inp{
     justify-content: center;
     height: 7vh;
-    width: 40vw;
+    width: 30vw;
     border-radius: 13px ;
-    border: solid #b91816;
+    border: solid black;
     padding: 4px;
     margin-top: 2.2vh;
     margin-left: 8vw;
@@ -122,20 +151,20 @@ body{
 .box3 label{
     font-size: 1rem;
     margin-left: 8vw;
-    padding-top: 1.3vh;
+    padding-top: 1.5vh;
 }
 .inplast{
-    width:41vw ;
-    margin-top: 4vh;
+    width:31vw ;
+    margin-top: 4.4vh;
     height: 10vh;
 }
 .btn{
     width: 10vw;
     height: 10vh;
     margin-top: 5vh;
-    margin-left: 24vw;
+    margin-left: 20vw;
     border-radius: 15px;
-    background-color: rgb(164, 159, 159);
+    background-color: white;
 
 }
 .rect{
@@ -181,10 +210,19 @@ body{
     background-color: gray;
 }
 #health{
-    margin-top: 3.2vh;
+    margin-top: 2.9vh;
+    
     margin-bottom: 2.5vh;
     /* margin-left: 3vw; */
-    color: #b91816;
-    font-size: 2.1rem;
+    color: black;
+    font-size: 2.2rem;
     text-align: center;
+    font-weight: 300;
+}
+.reviewbox{
+    height: 30vh;
+    width: 50vw;
+    margin: auto;
+    background-color: #4a5c69;
+
 }
