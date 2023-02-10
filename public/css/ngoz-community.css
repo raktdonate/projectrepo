@@ -96,7 +96,7 @@
     width: 100vw;
 }
 .ngolistdc p{
-    font-size: 1rem;
+    font-size: 1.6vw;
 }
 .chat a{
     text-decoration: none;
@@ -110,17 +110,12 @@
     position: relative;
     left: 4vw;
     top: 3vh;
-
-    margin-top: 1%;
-    
    font-size: 1.5vw;
     height: 20vh;
     width: 18vw;
     border: 2px;
 }
 .ngoinfo{
-    margin-top: 2vh;
     margin-bottom: 2vh;
-    font-size: 1.8vw;
     font-weight: 600;
 }

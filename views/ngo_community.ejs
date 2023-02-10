@@ -23,61 +23,48 @@
                 <div class="ngoboxaaa">
     
                     <ul class="grandlist">
+                        <% if(userData2.length>=0){%>
+                            <% for(let ngo of userData2){%>
                       
                         <li class="ngolistdc">
-                            <div class="ngolistdcdiv" id="ngolistdivimg">
+                            <!-- <div class="ngolistdcdiv" id="ngolistdivimg">
                                 <img class="ngodp" src="images/profile.jpg" alt="">
-                            </div>
+                            </div> -->
                             <div class="ngolistdcdiv">
                                 
                                 <p class="ngoinfo">Name</p>
+                                <p><%=ngo.username%></p>
                                 
                             </div>
                             <div class="ngolistdcdiv">
                                 <p class="ngoinfo">State</p>
+                                <p><%=ngo.state%></p>
                             </div>
                             <div class="ngolistdcdiv">
                                 <p class="ngoinfo">City</p>
+                                <p><%=ngo.city%></p>
                                
                             </div>
                             
                             <div class="ngolistdcdiv">
                                 <p class="ngoinfo">Email</p>
-                              
+                              <p> <%=ngo.email%></p>
                             </div>
                            
                             <div class="ngolistdcdiv">
-                                <p class="ngoinfo chat" > <a href="chat">Chat here</a></p>
-                               
+                                <p class="ngoinfo" >Contact</p>
+                                <p><%=ngo.contact%></p>
                             </div>
                 
                         </li>
+                        <%}%>
+                        <%}%>
                        
                     </ul>
                  
                     
                 </div>
             </div>
-            <% if(userData2.length>=0){%>
-                <% for(let ngo of userData2){%>
-                    <p>----------------------------------------------</p>
-                    <p>
-                        <%=ngo.username%>
-                    </p>
-                    <p>
-                        <%=ngo.email%>
-                    </p>
-                    <p>
-                        <%=ngo.state%>
-                    </p>
-                    <p>
-                        <%=ngo.contact%>
-                    </p>
-                    <p>
-                        <%=ngo.city%>
-                    </p>
-                    <p>----------------------------------------------</p>
-                    <%}%>
-                        <%}%>
+            
 
                             <%- include('./includes/tail.ejs')%>
