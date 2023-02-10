@@ -6,6 +6,8 @@ const errorController=require('../controllers/error')
 
 router.get('/',mainController.getIndex)
 
+router.get('/about',mainController.getAbout)
+
 router.get('/donorcommunity',mainController.getDonorCommunity)
 
 router.get('/ngocommunity',mainController.getNgoCommunity)
