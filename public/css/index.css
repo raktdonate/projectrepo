@@ -15,21 +15,36 @@ body{
     overflow-x: hidden;
 }
 .box1abc{
+   
     width: 40vw;
     height: 40vh;
     /* border: 4px solid red; */
     margin-top: 15vh;
     margin-bottom: 20vh;
+
 }
 .boxref{
+
+    align-items: center;
+    border-radius: 40px;
     margin-left: 3vw;
-    height: 17vh;
-    width: 20vw;
-    position: relative;
-    top: 4vh;
-    
-    
+    background-color: white;
+    margin-top: 5vh;
+    width: 17vw;
+    /* top: 3vh;  */
 }
+.boxref a{
+    height: 4vh;
+    color: #e63838;
+    margin-left: 1vw;
+    text-decoration: none;
+    /* padding-left: 2vw; */
+    font-size: 2rem;
+}
+.boxref:hover{
+    background-color: #ffe9f4;
+}
+
 .boxabc a{
     font-size: 4rem;
 }
@@ -63,15 +78,7 @@ body{
      color: #e63838;
      /* background-color: #e63838; */
 }
-.boxref a{
-    height: 4vh;
-    width: 9vw;
-    color: #e63838;
-    background-color: white;
-    text-decoration: none;
-    /* padding-left: 2vw; */
-    font-size: 2rem;
-}
+
 /* .boxwhy{
     width: 60vw;
     height: 75vh;

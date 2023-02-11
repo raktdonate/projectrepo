@@ -4,6 +4,7 @@
 }
 body{
     overflow-x: hidden;
+    background-color: #e63838;
 }
 .navilist{
     display: flex;
@@ -24,6 +25,7 @@ body{
     text-decoration: none;
 }
 .listing {
+    background-color: #e63838;
     list-style: none;
 }
 .listing a{
@@ -48,18 +50,16 @@ body{
 .right{
     width: 18vw;
     height: 14vh;
-    /* background-color:white; */
-    background-color:  #e63838;;
+    background-color: #e63838;
     display: flex;
     align-items: center;
-    /* box-shadow: 7px 5px 8px  rgb(76, 73, 73); */
     
     
 }
 #logo{
-    height: 12vh;
+    height: 11vh;
     width: 6vw;
-    margin-left: 8px;
+    margin-left: 6px;
     padding-bottom: 2px;
 }
 #logopara{
@@ -82,10 +82,30 @@ body{
     text-decoration: none;
 }
 .profileimg{
+    background-color: #e63838;
     height: 8vh;
-    width: 4vw;
+    width: 3vw;
+
 }
 .imgprofile{
     position: relative;
-    left: 14vw;
+    left: 10vw;
+    background-color: #e63838;
+}
+
+
+.dropdown{
+    background-color: #e63838;
+    position: relative;
+    display: inline-block;
+}
+.dropbtn{
+    background-color: #e63838;
+    border-radius: 50%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+#profileimg{
+    margin: 0;
 }

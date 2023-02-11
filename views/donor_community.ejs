@@ -5,17 +5,31 @@
     <%- include('./includes/navbar.ejs')%> 
     <div class="mainna">
         <div class="box">
-            <div class="box1">
-                <img src="images/communitybg.png" alt="">
-            </div>
-            <div class="paraboxn">
-                <h1>Donor Community</h1>
-                <p>A community for the donors to directly communicate with the people in need of blood transfusion</p>
-    
-                <div class="joinbox">
-                    <a href="/joincommunity">Join our community ---></a>
+            <div>
+                <div class="box1">
+                    <img src="images/communitybg.png" alt="">
                 </div>
+                <div class="paraboxn">
+                    <div class="heading">
+                        <h1>Donor Community</h1>
+                        <p>A community for the donors to directly communicate with the people in need of blood transfusion</p>
+                    </div>
+                    <div class="search1">
+                        <form action="/search" method="post">
+                            <label  for="city">Blood group </label>
+                            <input class="inputb1" id="city" type="text" placeholder="Enter blood group">
+                            <label  for="blood">Your city</label>
+                            <input class="inputb2" name="blood" id="blood" type="text" placeholder="Enter your city">
+                            <label  for="blood">Contact number</label>
+                            <input class="inputb3" name="blood" id="blood" type="text" placeholder="Enter contact number">
+                            <button class="btndonor" type="submit">Join</button>
+                        </form>
+                    </div>
+                </div>
+                
             </div>
+            
+
             
         </div>
         <div class="box2">
