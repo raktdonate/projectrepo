@@ -2,6 +2,7 @@ exports.getError=(req,res,next)=>{
     res.render('error',{
         pageTitle:'Page not found',
         isAuth:req.session.isLoggedIn,
-        userData:req.user
+        userData:req.user,
+        path:'/error'
     })
 }

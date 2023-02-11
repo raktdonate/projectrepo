@@ -4,11 +4,11 @@
         <img id="logo" src="images/logo.png" alt="">
         <p id="logopara">RedToLife</p>
         <ul class="list">
-            <li class="listing"> <a href="/"> HOME</a></li>
-            <li class="listing"> <a href="/about"> ABOUT US</a></li>
-            <li class="listing"><a href="/donate"> DONATE</a></li>
-            <li class="listing"><a href="/donorcommunity"> DONOR COMMUNITY</a></li>
-            <li class="listing"><a href="/ngocommunity">NGO COMMUNITY</a></li>
+            <li class="listing"> <a class="<%= path === '/' ? 'active' : '' %>" href="/"> HOME</a></li>
+            <li class="<%= path === '/aboutus' ? 'active' : '' %> listing"> <a href="/about"> ABOUT US</a></li>
+            <li class="<%= path === '/donate' ? 'active' : '' %> listing"><a href="/donate"> DONATE</a></li>
+            <li class="<%= path === '/donorcommunity' ? 'active' : '' %> listing"><a href="/donorcommunity"> DONOR COMMUNITY</a></li>
+            <li class="<%= path === '/ngocommunity' ? 'active' : '' %> listing"><a href="/ngocommunity">NGO COMMUNITY</a></li>
         </ul>
     </div>
     <% if(!isAuth){%>
@@ -35,7 +35,6 @@
 
                                                 <div class="dropdown-content">
                                                     <a href="/profile">Profile</a>
-                                                    <a href="/joincommunity">Join Community</a>
                                                     <a href="/logout">Logout</a>
 
                                                 </div>

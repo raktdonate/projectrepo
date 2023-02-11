@@ -15,13 +15,13 @@
                         <p>A community for the donors to directly communicate with the people in need of blood transfusion</p>
                     </div>
                     <div class="search1">
-                        <form action="/search" method="post">
+                        <form action="/joincommunity" method="post">
                             <label  for="city">Blood group </label>
-                            <input class="inputb1" id="city" type="text" placeholder="Enter blood group">
+                            <input class="inputb1" name="blood" id="city" type="text" placeholder="Enter blood group">
                             <label  for="blood">Your city</label>
-                            <input class="inputb2" name="blood" id="blood" type="text" placeholder="Enter your city">
+                            <input class="inputb2" name="city" id="blood" type="text" placeholder="Enter your city">
                             <label  for="blood">Contact number</label>
-                            <input class="inputb3" name="blood" id="blood" type="text" placeholder="Enter contact number">
+                            <input class="inputb3" name="contact" id="blood" type="text" placeholder="Enter contact number">
                             <button class="btndonor" type="submit">Join</button>
                         </form>
                     </div>
@@ -59,15 +59,23 @@
             <% if(userData2.length>=0){%>
                 <!-- <hr class="lining"> -->
             <ul>
+                <div class="tablediv">
+                    <p class="info a">Name</p>
+                    <p class="info b">City</p>
+                    <p class="info c">Blood group</p>
+                    <p class="info d chat" >chat</p> 
+                    <p class="info e">Email</p>
+                </div>
+                
                 <% for(let user of userData2){%>
                 <li class="listdc">
                     <div class="listdcdiv">
                         
-                        <p class="info">Name</p>
+                        
                         <p><%=user.username%></p>
                     </div>
                     <div class="listdcdiv">
-                        <p class="info">City</p>
+                        
                         <p><%=user.city%></p>
                     </div>
                     <!-- <div class="listdcdiv">
@@ -75,7 +83,7 @@
                         <p>Click here to chat</p>
                     </div> -->
                     <div class="listdcdiv">
-                        <p class="info">Blood group</p>
+                        
                         <p><%=user.blood%></p>
                     </div>
                     <!-- <div class="listdcdiv">
@@ -83,12 +91,13 @@
                         <p><%=user.contact%></p>
                     </div> -->
                     <div class="listdcdiv">
-                        <p class="info chat" > <a href="chat">Chat here</a></p>
+                        
+                        <a href="chat">Chat here</a></p>
                        
                     </div>
         
                     <div class="listdcdiv">
-                        <p class="info">Email</p>
+                       
                         <p><%=user.email%></p>
                     </div>
                 </li>
@@ -100,7 +109,5 @@
             
         </div>
     </div>
-    
-    
     
 <%- include('./includes/tail.ejs')%>

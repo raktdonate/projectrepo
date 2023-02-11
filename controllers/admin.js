@@ -22,7 +22,8 @@ exports.getList=(req,res,next)=>{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
             userData:req.user,
-            ngos:ngos
+            ngos:ngos,
+            path:''
         })
         }
     ).catch(err=>{
