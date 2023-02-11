@@ -4,6 +4,7 @@
 }
 body{
     overflow-x: hidden;
+    background-color: #e63838;
 }
 .navilist{
     display: flex;
@@ -57,9 +58,9 @@ body{
     
 }
 #logo{
-    height: 12vh;
+    height: 11vh;
     width: 6vw;
-    margin-left: 8px;
+    margin-left: 6px;
     padding-bottom: 2px;
 }
 #logopara{
@@ -83,9 +84,17 @@ body{
 }
 .profileimg{
     height: 8vh;
-    width: 4vw;
+    width: 3vw;
+
 }
 .imgprofile{
     position: relative;
-    left: 14vw;
+    left: 10vw;
+    background-color: #e63838;
+}
+.dropdown{
+    background-color: #e63838;
+}
+.dropbtn{
+    background-color: #e63838;
 }
