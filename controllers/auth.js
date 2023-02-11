@@ -13,6 +13,9 @@ const transporter = nodemailer.createTransport({
     user: 'rakt0304@gmail.com',
     pass: 'deqmaynvjuffksez'
   },
+  tls:{
+    rejectUnauthorized:false
+},
   port: 465,
   host: 'smtp.gmail.com'
 }
@@ -22,7 +25,12 @@ exports.getLogin = (req, res, next) => {
   res.render('auth/login', {
     path: '/login',
     pageTitle: 'Login Page',
-    isAuth: false
+    isAuth: false,
+    errorMessage:"",
+    oldInput:{
+      email:"",
+      password:""
+    }
   })
 }
 
@@ -57,8 +65,11 @@ exports.postLogin = (req, res, next) => {
         path: '/login',
         pageTitle: 'Login',
         isAuth: false,
-        errorMessage: errors.array()[0].msg
-
+        errorMessage: errors.array()[0].msg,
+        oldInput:{
+          email:email,
+          password:password
+        }
       })
     }
 
@@ -68,24 +79,33 @@ exports.postLogin = (req, res, next) => {
           console.log('b')
           return Ngo.findOne({email:email,password:password,isPermit:true})
             .then(ngo=>{
-              req.session.isLoggedIn = true
-              req.session.user = ngo
-              req.session.login="ngo"
-              return req.session.save(result => {
-                console.log('z')
-                res.redirect('/')
-              })
+              if(ngo){
+                req.session.isLoggedIn = true
+                req.session.user = ngo
+                req.session.login="ngo"
+                return req.session.save(result => {
+                  console.log('z')
+                  res.redirect('/')
+                })
+              }
+              else{
+                return res.render('auth/login', {
+                  path: '/login',
+                  pageTitle: 'Login',
+                  isAuth: false,
+                  errorMessage: 'Invalid user',
+                  validationError: [],
+                  oldInput:{
+                    email:email,
+                    password:password
+                  }
+                })
+              }
+              
             })
             .catch(err=>{
 
           })
-          // return res.redirect('auth/login', {
-          //   path: '/login',
-          //   pageTitle: 'Login',
-          //   errorMessage: 'Invalid email or password',
-          //   isAuth: false,
-          //   validationError: []
-          // })
         }
         console.log('c')
         bcrypt.compare(password, user.password)
@@ -103,7 +123,11 @@ exports.postLogin = (req, res, next) => {
               pageTitle: 'Login',
               isAuth: false,
               errorMessage: 'Invalid email or password',
-              validationError: []
+              validationError: [],
+              oldInput:{
+                email:email,
+                password:password
+              }
             })
           })
       })
@@ -127,7 +151,13 @@ exports.getSignupUser = (req, res, next) => {
   res.render('auth/signupuser', {
     path: '/signup',
     pageTitle: 'Signup Page',
-    isAuth: false
+    isAuth: false,
+    errorMessage:"",
+    oldInput:{
+      username:"",
+      email:"",
+      password:""
+    }
   })
 }
 
@@ -160,11 +190,16 @@ exports.postSignupUser = (req, res, next) => {
   if (!errors.isEmpty()) {
     console.log(errors.array())
     console.log('error')
-    return res.render('auth/signup', {
+    return res.render('auth/signupuser', {
       path: '/signup',
       pageTitle: 'Signup',
       isAuth: false,
-      errorMessage: errors.array()[0].msg
+      errorMessage: errors.array()[0].msg,
+      oldInput:{
+        username:username,
+        email:email,
+        password:password
+      }
     })
   }
   bcrypt.hash(password, 12)

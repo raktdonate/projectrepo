@@ -1,0 +1,21 @@
+.signup{
+    background-color: #ffe9f4;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.boxes{
+    align-items: center;
+    display: flex;
+}
+
+.donor{
+    width: 20vw;
+    height: 5vh;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: 2vh 2vw;
+}

@@ -6,6 +6,8 @@ const errorController=require('../controllers/error')
 
 router.get('/',mainController.getIndex)
 
+router.get('/about',mainController.getAbout)
+
 router.get('/donorcommunity',mainController.getDonorCommunity)
 
 router.get('/ngocommunity',mainController.getNgoCommunity)
@@ -20,6 +22,6 @@ router.get('/profile',mainController.getProfile);
 
 router.post('/editprofile',mainController.postChanges)
 
-
+router.get('/chatpage/:userToChat',mainController.getChatPage)
 
 module.exports=router

@@ -11,6 +11,16 @@ exports.getIndex=(req,res,next)=>{
         userData:req.user
     })
 }
+
+exports.getAbout=(req,res,next)=>{
+    console.log(req.user)
+    res.render('aboutus',{
+        pageTitle:'Home Page',
+        isAuth:req.session.isLoggedIn,
+        userData:req.user
+    })
+}
+
 exports.getDonorCommunity=(req,res,next)=>{
     User.find({isDonor:true}).then(users=>{
         res.render('donor_community',{
@@ -143,5 +153,10 @@ exports.getNgoCommunity=(req,res,next)=>{
             userData2:ngos,
             userData:req.user
         })
+    })
+}
+exports.getChatPage=(req,res,next)=>{
+    res.render('chat_page',{
+        
     })
 }
