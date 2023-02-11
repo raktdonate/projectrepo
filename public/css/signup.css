@@ -1,7 +1,8 @@
 body {
-   background-color: #b42d2a;
+   background-color: #ffe9f4;
     font-family: "Roboto", sans-serif;
     overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -15,12 +16,13 @@ body {
     height:85vh;
     margin: 3.5vh auto;
     border-radius: 3px;
-    background-color: white;
+    background-color: #e63838;
   }
   h1 {
     text-align: center;
     padding-top: 6vh;
-    font-size: 3rem;
+    font-size: 2rem;
+    color: white;
   }
   
   /* h4 {
@@ -34,9 +36,9 @@ body {
   
   form label {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 5px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
@@ -54,13 +56,13 @@ body {
     width: 7vw;
     height: 6vh;
     margin-top: -4vh;
-    border:solid 2px gray;
+    /* border:solid 2px gray; */
     border-radius: 20px;
-    background-color: #b91816;
-    color: white;
-    font-size: 1.7rem;
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
     position: relative;
-    left: 10vw;
+    left: 9vw;
     
   }
   p {
@@ -76,7 +78,8 @@ body {
     margin-top: 10px;
   }
   .para-2 a {
-    color: #b91816;
+    color: white;
+    text-decoration: none;
   }
   .imgtoggling{
     position: relative;
