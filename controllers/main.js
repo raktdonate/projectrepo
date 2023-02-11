@@ -155,3 +155,8 @@ exports.getNgoCommunity=(req,res,next)=>{
         })
     })
 }
+exports.getChatPage=(req,res,next)=>{
+    res.render('chat_page',{
+        
+    })
+}

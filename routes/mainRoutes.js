@@ -22,6 +22,6 @@ router.get('/profile',mainController.getProfile);
 
 router.post('/editprofile',mainController.postChanges)
 
-
+router.get('/chatpage/:userToChat',mainController.getChatPage)
 
 module.exports=router

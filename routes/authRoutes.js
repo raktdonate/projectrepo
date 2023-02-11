@@ -10,15 +10,11 @@ router.get('/login',authController.getLogin)
 router.post('/login',
             [
                 body('email','Incorrect email')
-                .isEmail()
-                .normalizeEmail(),
+                .isEmail(),
                 
-                 body('password','password didnt matched')
+                 body('password','password has to be valid')
                  .isLength({min:5})
-                 .isAlphanumeric()
                  .trim()
-
-
             ]
             ,authController.postLogin)
 
@@ -32,6 +28,8 @@ router.get('/ngosignup',authController.getSignupNgo)
 
 router.post('/signupuser',
     [
+        body('username','username should of minimum length 5')
+            .isLength({min:5}),
         body('email')
             .isEmail()
             .withMessage('please enter a valid email')
@@ -43,11 +41,9 @@ router.post('/signupuser',
                         )
                     }
                 })
-            })
-            .normalizeEmail(),
+            }),
         body('password','Password has to be valid')
             .isLength({min:5})
-            .isAlphanumeric()
             .trim()
     ]
     ,authController.postSignupUser)
