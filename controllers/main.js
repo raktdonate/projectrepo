@@ -2,6 +2,7 @@
 const User=require('../model/user')
 const Ngo=require('../model/ngo')
 const fileHelper=require('../utils/file')
+const Donate=require('../model/donate')
 
 exports.getIndex=(req,res,next)=>{
     console.log(req.user)
@@ -10,6 +11,70 @@ exports.getIndex=(req,res,next)=>{
         isAuth:req.session.isLoggedIn,
         userData:req.user
     })
+}
+exports.getDonate=(req,res,next)=>{
+    Donate.find().limit(20).then(users=>{
+        res.render('donate',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData2:users,
+            userData:req.user
+        })
+    })
+}
+
+exports.postDonate=(req,res,next)=>{
+    const pinCode=req.body.pincode
+    const state=req.body.state
+    console.log('a')
+    if(pinCode.length==0&&state.length==0){
+        console.log('a')
+        Donate.find().limit(20).then(users=>{
+            console.log(users)
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else if(pinCode.length==0){
+        console.log('b')
+        Donate.find({State:state}).then(users=>{
+            // console.log(users)
+            console.log(users[0])
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else if(state.length==0){
+        console.log('c')
+        Donate.find({Pincode:pinCode}).then(users=>{
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
+    else{
+        Donate.find({Pincode:pinCode,State:state}).then(users=>{
+            console.log('f')
+            console.log(users)
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user
+            })
+        })
+    }
 }
 
 exports.getAbout=(req,res,next)=>{
