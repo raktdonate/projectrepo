@@ -28,4 +28,8 @@ router.get('/chatpage/:userToChat',mainController.getChatPage)
 
 router.post('/searchdonate',mainController.postDonate)
 
+router.get('/sendmail/:userId',mainController.getSendMail)
+
+router.post('/sendmail',mainController.postMail)
+
 module.exports=router
