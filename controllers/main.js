@@ -1,7 +1,20 @@
 
 const User=require('../model/user')
 const Ngo=require('../model/ngo')
+const Review=require('../model/review')
 const fileHelper=require('../utils/file')
+const review = require('../model/review')
+
+exports.getIndex=(req,res,next)=>{
+    Review.find().then(reviews=>{
+        res.render('index',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData:req.user,
+            revData:reviews
+        })
+    }).catch()
+}
 const Donate=require('../model/donate')
 const mongodb=require('mongodb')
 
@@ -260,6 +273,18 @@ exports.getChatPage=(req,res,next)=>{
         
     })
 }
+exports.postReview=(req,res,next)=>{
+    const text=req.body.name
+    // const username=req.body.username
+    const review=new Review({
+        userId:req.user._id,
+        text:text,
+        username:req.user.username
+    })
+    review.save().then(result=>{
+        res.redirect('/')
+    }).catch()
+}
 exports.getSendMail=(req,res,next)=>{
     const userId=req.params.userId
     res.render('mail',{
@@ -290,5 +315,4 @@ exports.postMail=(req,res,next)=>{
         }
         
     })
-    
-}
+} 
