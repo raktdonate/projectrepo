@@ -247,7 +247,6 @@ body{
     margin: 10px;
 }
 .during{
-   
     height:50vh ;
     width: 30vw;
     border-radius: 5px;
@@ -346,6 +345,7 @@ body{
   }
   .footmi h2 {
     font-weight: 1000;
+    padding-bottom: 3vh;
   }
   .footmi p {
     padding: 2%;
@@ -379,6 +379,13 @@ body{
     display: flex;
     padding-top: 2%;
     padding-left: 40%;
+  }
+  .imagefoot1{
+    height: 4vh;
+    width: 3vw;
+    padding-top: 3px;
+   
+    color: white;
   }
   .imagefoot {
     height: 5vh;
