@@ -143,7 +143,7 @@ exports.getSignupMain = (req, res, next) => {
   res.render('auth/signupmain', {
     path: '/signup',
     pageTitle: 'Signup Page',
-    isAuth: false
+    isAuth: false,
   })
 }
 
@@ -177,7 +177,8 @@ exports.postLogout = (req, res, next) => {
     res.render('index', {
       pageTitle: 'Home Page',
       isAuth: false,
-      userData:req.user
+      userData:req.user,
+      path:'/'
     })
   })
 }

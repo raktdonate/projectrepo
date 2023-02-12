@@ -1,0 +1,17 @@
+<%- include('./includes/head.ejs')%>
+<link rel="stylesheet" href="css/mail.css">
+</head>
+<body>
+    <div class="formmail" >
+        <form action="/sendmail" method="post">
+            <label  for="contact">Enter your contact</label>
+            <input class="contact" name="contact" id="contact" type="text">
+            <input hidden type="text" value="<%=userId%>" name="userId">
+            <label  for="msgmail">Type your message</label>
+            <input class="msgmail" name="msgmail" id="msgmail" type="text">
+            <button class="btn2" type="submit">send</button>
+        </form>
+    </div>
+   
+    
+<%- include('./includes/tail.ejs')%>

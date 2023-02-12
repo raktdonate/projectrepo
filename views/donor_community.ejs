@@ -5,17 +5,31 @@
     <%- include('./includes/navbar.ejs')%> 
     <div class="mainna">
         <div class="box">
-            <div class="box1">
-                <img src="images/communitybg.png" alt="">
-            </div>
-            <div class="paraboxn">
-                <h1>Donor Community</h1>
-                <p>A community for the donors to directly communicate with the people in need of blood transfusion</p>
-    
-                <div class="joinbox">
-                    <a href="/joincommunity">Join our community ---></a>
+            <div>
+                <div class="box1">
+                    <img src="images/communitybg.png" alt="">
                 </div>
+                <div class="paraboxn">
+                    <div class="heading">
+                        <h1>Donor Community</h1>
+                        <p>A community for the donors to directly communicate with the people in need of blood transfusion</p>
+                    </div>
+                    <div class="search1">
+                        <form action="/joincommunity" method="post">
+                            <label  for="city">Blood group </label>
+                            <input class="inputb1" name="blood" id="city" type="text" placeholder="Enter blood group">
+                            <label  for="blood">Your city</label>
+                            <input class="inputb2" name="city" id="blood" type="text" placeholder="Enter your city">
+                            <label  for="blood">Contact number</label>
+                            <input class="inputb3" name="contact" id="blood" type="text" placeholder="Enter contact number">
+                            <button class="btndonor" type="submit">Join</button>
+                        </form>
+                    </div>
+                </div>
+                
             </div>
+            
+
             
         </div>
         <div class="box2">
@@ -32,6 +46,7 @@
             </div>
             <div class="search">
                 <h4 id="searchinghead">Search</h4>
+                <hr class="linedon">
                 <form action="/search" method="post">
                     <label  for="city">Enter city </label>
                     <input name="city" id="city" type="text" placeholder="Enter your city">
@@ -45,15 +60,23 @@
             <% if(userData2.length>=0){%>
                 <!-- <hr class="lining"> -->
             <ul>
+                <div class="tablediv">
+                    <p class="info a">Name</p>
+                    <p class="info b">City</p>
+                    <p class="info c">Blood group</p>
+                    <!-- <p class="info d chat" >chat</p> 
+                    <p class="info e">Email</p> -->
+                </div>
+                
                 <% for(let user of userData2){%>
                 <li class="listdc">
                     <div class="listdcdiv">
                         
-                        <p class="info">Name</p>
+                        
                         <p><%=user.username%></p>
                     </div>
                     <div class="listdcdiv">
-                        <p class="info">City</p>
+                        
                         <p><%=user.city%></p>
                     </div>
                     <!-- <div class="listdcdiv">
@@ -61,7 +84,7 @@
                         <p>Click here to chat</p>
                     </div> -->
                     <div class="listdcdiv">
-                        <p class="info">Blood group</p>
+                        
                         <p><%=user.blood%></p>
                     </div>
                     <!-- <div class="listdcdiv">
@@ -69,14 +92,13 @@
                         <p><%=user.contact%></p>
                     </div> -->
                     <div class="listdcdiv">
-                        <p class="info chat" > <a href="chat">Chat here</a></p>
-                       
+                        <a href="/sendmail/<%=user._id%>">Send Mail</a></p>  
                     </div>
         
-                    <div class="listdcdiv">
-                        <p class="info">Email</p>
+                    <!-- <div class="listdcdiv">
+                       
                         <p><%=user.email%></p>
-                    </div>
+                    </div> -->
                 </li>
                 <%}%>
             </ul>
@@ -86,7 +108,30 @@
             
         </div>
     </div>
-    
+    <footer class="footer">
+
+        <div class="footi">
+            <div class="footii">
+                <p>Mail Us At:</p>
+                <a href="redtolife@gmail.com">redtolife@gmail.com</a>
+            </div>
+        </div>
+        <div class="footm">
+            <div class="footmi">
+                <img class="bloodimg" src="images/logo.png" alt="">
+                <h2>redToLIFE</h2>
+                <p>redTOLiFE | HackJMI | Jamia Millia Islamia University</p>
+            </div>
+        </div>
+        <div class="footl">
+            <p>Follow Us</p>
+            <div class="footimage">
+                <a href=""><img class="imagefoot" src="/images/facebook.png" alt=""></a>
+                <a href=""><img class="imagefoot" src="/images/instagram.png" alt=""></a>
+                <a href=""><img class="imagefoot" src="/images/twitter.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
     
     
 <%- include('./includes/tail.ejs')%>

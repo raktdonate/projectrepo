@@ -15,6 +15,7 @@ body{
     overflow-x: hidden;
 }
 .box1abc{
+   
     width: 40vw;
     height: 40vh;
     /* border: 4px solid red; */
@@ -23,6 +24,9 @@ body{
 }
 
 .boxref{
+
+    align-items: center;
+    border-radius: 40px;
     margin-left: 3vw;
     height: 7vh;
     width: 20vw;
@@ -422,6 +426,7 @@ body{
   }
   .footmi h2 {
     font-weight: 1000;
+    padding-bottom: 3vh;
   }
   .footmi p {
     padding: 2%;
@@ -479,7 +484,13 @@ body{
     /* margin-top: 3vh; */
     margin-top: 1vh;
     /* margin-bottom: 2vh; */
-    
+  }
+  .imagefoot1{
+    height: 4vh;
+    width: 3vw;
+    padding-top: 3px;
+   
+    color: white;
   }
   .imagefoot {
     height: 5vh;

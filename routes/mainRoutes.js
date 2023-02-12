@@ -20,10 +20,17 @@ router.post('/search',mainController.postSearch)
 
 router.get('/profile',mainController.getProfile);
 
+router.get('/donate',mainController.getDonate)
+
 router.post('/editprofile',mainController.postChanges)
 
 router.get('/chatpage/:userToChat',mainController.getChatPage)
 
 router.post('/reviewForm',mainController.postReview)
+router.post('/searchdonate',mainController.postDonate)
+
+router.get('/sendmail/:userId',mainController.getSendMail)
+
+router.post('/sendmail',mainController.postMail)
 
 module.exports=router

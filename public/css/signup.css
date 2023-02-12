@@ -88,7 +88,7 @@ body {
   }
   .signupmsg{
     height: 3vh;
-    color: #e63838;
+    color: rgb(90, 56, 56);
     font-size: 3vh;
     font-weight: 400;
   }
