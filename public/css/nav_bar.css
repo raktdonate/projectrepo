@@ -7,7 +7,7 @@ body{
     background-color: #ffe9f4;;
 }
 .active{
-    color: #760a08;
+    color: gray;
 }
 
 .navilist{
@@ -49,7 +49,7 @@ body{
 
 
 .listing a:active{
-    color: #760a08;
+    color: gray;
 }
 .right{
     width: 18vw;
