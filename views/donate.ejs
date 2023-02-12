@@ -1,0 +1,89 @@
+<%- include('./includes/head.ejs')%>
+<link rel="stylesheet" href="css/donate.css">
+<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <%- include('./includes/navbar.ejs')%>
+    <div class="donatemainbox">
+        <div class="donatemainbox1">
+            <h1>Full fill your duty as a human</h1>
+            <p>Join our cause to save more lives, save humanity</p>
+            <p>and donate blood to be the reason of someone's</p>
+            <p>existence</p>
+            <div >
+                <video autoplay class="donatemainbox1vid" src="images/SearchDonor.mp4" type="video/mp4"></video>
+            </div>
+        </div>
+        <div class="donatemainbox2">
+            <h1>Search</h1>
+            <form action="/searchdonate" method="post">
+                <label class="labelpin" for="">Pincode</label>
+                <input class="pincodein" name="pincode" type="text">
+                <h2>OR</h2>
+                <label class="labelst" for="">State</label>
+                <input class="statein" name="state" type="text">
+                <button class="btnsub" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <section>
+        <!--for demo wrap-->
+        <!-- <h1></h1> -->
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th>Blood Bank</th>
+                <th>City</th>
+                <th>Full Address</th>
+                <th>Email</th>
+                <th>Mobile</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <%if(userData2.length>=0){%>
+                    <% for(let data of userData2){%>
+              <tr>
+                <td><%=data.BloodBankName%></td>
+                <td><%=data.City%></td>
+                <td><%=data.Address%></td>
+                <td><%=data.Email%></td>
+                <td><%=data.Mobile%></td>
+              </tr>
+              <%}%>
+              <%}%>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    
+      <footer class="footer">
+
+        <div class="footi">
+            <div class="footii">
+                <p>Mail Us At:</p>
+                <a href="redtolife@gmail.com">redtolife@gmail.com</a>
+            </div>
+        </div>
+        <div class="footm">
+            <div class="footmi">
+                <img class="bloodimg" src="/public/images/blood.png" alt="">
+                <h2>redToLIFE</h2>
+                <p>redTOLiFE | HackJMI | Jamia Millia Islamia University</p>
+            </div>
+        </div>
+        <div class="footl">
+            <p>Follow Us</p>
+            <div class="footimage">
+                <a href=""><img class="imagefoot" src="/images/facebook.png" alt=""></a>
+                <a href=""><img class="imagefoot" src="/images/instagram.png" alt=""></a>
+                <a href=""><img class="imagefoot" src="/images/twitter.png" alt=""></a>
+            </div>
+        </div>
+    
+<%- include('./includes/tail.ejs')%>

@@ -2,14 +2,85 @@
 const User=require('../model/user')
 const Ngo=require('../model/ngo')
 const fileHelper=require('../utils/file')
+const Donate=require('../model/donate')
 
 exports.getIndex=(req,res,next)=>{
     console.log(req.user)
     res.render('index',{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,
-        userData:req.user
+        userData:req.user,
+        path:'/'
     })
+}
+exports.getDonate=(req,res,next)=>{
+    Donate.find().limit(20).then(users=>{
+        res.render('donate',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData2:users,
+            userData:req.user,
+            path:'/donate'
+        })
+    })
+}
+
+exports.postDonate=(req,res,next)=>{
+    const pinCode=req.body.pincode
+    const state=req.body.state
+    console.log('a')
+    if(pinCode.length==0&&state.length==0){
+        console.log('a')
+        Donate.find().limit(20).then(users=>{
+            console.log(users)
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user,
+                path:'/donate'
+            })
+        })
+    }
+    else if(pinCode.length==0){
+        console.log('b')
+        Donate.find({State:state}).then(users=>{
+            // console.log(users)
+            console.log(users[0])
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user,
+                path:'/donate'
+            })
+        })
+    }
+    else if(state.length==0){
+        console.log('c')
+        Donate.find({Pincode:pinCode}).then(users=>{
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user,
+                path:'/donate'
+            })
+        })
+    }
+    else{
+        Donate.find({Pincode:pinCode,State:state}).then(users=>{
+            console.log('f')
+            console.log(users)
+            res.render('donate',{
+                pageTitle:'Home Page',
+                isAuth:req.session.isLoggedIn,
+                userData2:users,
+                userData:req.user,
+                path:'/donate'
+            })
+        })
+    }
 }
 
 exports.getAbout=(req,res,next)=>{
@@ -17,7 +88,8 @@ exports.getAbout=(req,res,next)=>{
     res.render('aboutus',{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,
-        userData:req.user
+        userData:req.user,
+        path:'/aboutus'
     })
 }
 
@@ -27,7 +99,8 @@ exports.getDonorCommunity=(req,res,next)=>{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
             userData2:users,
-            userData:req.user
+            userData:req.user,
+            path:'/donor_community'
         })
     })
     
@@ -42,7 +115,8 @@ exports.getJoinCommunity=(req,res,next)=>{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
             userData2:users,
-            userData:req.user
+            userData:req.user,
+            path:'/joincommunity'
         })
     })
     
@@ -71,8 +145,10 @@ exports.postJoinCommunity=(req,res,next)=>{
         User.find({isDonor:true}).then(users=>{
             res.render('donor_community',{
                 pageTitle:'Home Page',
+                path:'/donor_community',
                 isAuth:req.session.isLoggedIn,
-                userData2:users
+                userData2:users,
+                userData:req.user
             })
         })
     })
@@ -87,7 +163,8 @@ exports.postSearch=(req,res,next)=>{
                 pageTitle:'Home Page',
                 isAuth:req.session.isLoggedIn,
                 userData2:users,
-                userData:req.user
+                userData:req.user,
+                path:'/donor_community'
             })
         })
     }
@@ -97,7 +174,8 @@ exports.postSearch=(req,res,next)=>{
                 pageTitle:'Home Page',
                 isAuth:req.session.isLoggedIn,
                 userData2:users,
-                userData:req.user
+                userData:req.user,
+                path:'/donor_community'
             })
         })
     }
@@ -107,7 +185,8 @@ exports.postSearch=(req,res,next)=>{
                 pageTitle:'Home Page',
                 isAuth:req.session.isLoggedIn,
                 userData2:users,
-                userData:req.user
+                userData:req.user,
+                path:'/donor_community'
             })
         })
     }
@@ -117,7 +196,8 @@ exports.postSearch=(req,res,next)=>{
                 pageTitle:'Home Page',
                 isAuth:req.session.isLoggedIn,
                 userData2:users,
-                userData:req.user
+                userData:req.user,
+                path:'/donor_community'
             })
         })
     }
@@ -128,7 +208,8 @@ exports.getProfile=(req,res,next)=>{
         pageTitle:'Home Page',
         isAuth:req.session.isLoggedIn,
         edit:edit,
-        userData:req.user
+        userData:req.user,
+        path:'/profile'
     })
 }
 exports.postChanges=(req,res,next)=>{
@@ -151,7 +232,8 @@ exports.getNgoCommunity=(req,res,next)=>{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
             userData2:ngos,
-            userData:req.user
+            userData:req.user,
+            path:'/ngo_community'
         })
     })
 }
