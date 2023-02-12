@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'FontHere';
+    src: URL('images/FontsFree.ttf') format('truetype');
+  }
 *{
     margin:0;
     padding: 0;
@@ -70,6 +74,7 @@ body{
     color: #ffe9f4;
     font-size: 1.7rem;
     padding-left: 0.5vw;
+    font-family: 'FontHere';
     /* padding-bottom: 1vh; */
     
 }

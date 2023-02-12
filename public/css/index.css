@@ -1,5 +1,11 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans:ital,wght@1,300&family=Source+Sans+Pro&display=swap');
+  /* @import url('FontsFree.ttf'); */
+  @font-face {
+    font-family: 'FontHere';
+    src: URL('images/FontsFree.ttf') format('truetype');
+  }
+
 
 *{
     margin:0;
@@ -79,8 +85,8 @@ body{
     background-color: #e63838;
     /* background-color: white; */
     text-decoration: none;
-    /* padding-left: 2vw; */
-    font-size: 2rem;
+    padding-left: 0.8vw;
+    font-size: 2vw;
 }
 /* .boxwhy{
     width: 60vw;
@@ -342,6 +348,7 @@ body{
   margin-top: 2vh;
     width: 15vw;
     height: 11vh;
+    border-radius: 9px;
     margin-left: 17.3vw;
     font-size: 1.1vw;
     border: 2px solid gray;
@@ -349,6 +356,14 @@ body{
 .ulrev{
   margin-top: 2vh;
   overflow-y: scroll;
+}
+.khubandiv h2{
+  padding-left: 13vw;
+  color: rgb(245, 243, 240);
+}
+.khubandiv p{
+  color: white;
+  padding: 8px;
 }
 .amam{
   display: flex;
@@ -362,7 +377,7 @@ body{
   margin-left: 15vw;
     font-size: 3vw;
     padding-top: 1vh;
-    color: #e63838;
+    color: black;
 }
 /* .reviewbox input{
     /* width: 30vw;
@@ -507,7 +522,7 @@ body{
   }
   .khubandiv{
     height: 25vh;
-    width: 30vw;
+    width: 36vw;
     /* background-color: gray; */
     /* margin-top: 3vh; */
     margin-top: 1vh;
@@ -530,6 +545,8 @@ body{
     background-color: rgb(52, 52, 52);
     margin: 4vh 2vw;
     height:16vh;
+    border: 2px solid;
+    border-radius: 13px;
     width: 36vw;
   }
   .listreview{

@@ -37,6 +37,7 @@ body {
   form label {
     display: flex;
     margin-top: 20px;
+    color: white;
     margin-bottom: 5px;
     font-size: 1.3rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,7 +73,7 @@ body {
   }
   .para-2 {
     text-align: center;
-    color: black;
+    color: white;
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;

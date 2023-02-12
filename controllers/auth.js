@@ -173,13 +173,7 @@ exports.getSignupNgo = (req, res, next) => {
 exports.postLogout = (req, res, next) => {
   req.session.destroy((err) => {
     console.log(err)
-    // res.redirect('/')
-    res.render('index', {
-      pageTitle: 'Home Page',
-      isAuth: false,
-      userData:req.user,
-      path:'/'
-    })
+    res.redirect('/')
   })
 }
 exports.postSignupUser = (req, res, next) => {
