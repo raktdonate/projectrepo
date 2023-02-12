@@ -1,15 +1,20 @@
 
 const User=require('../model/user')
 const Ngo=require('../model/ngo')
+const Review=require('../model/review')
 const fileHelper=require('../utils/file')
+const review = require('../model/review')
 
 exports.getIndex=(req,res,next)=>{
-    console.log(req.user)
-    res.render('index',{
-        pageTitle:'Home Page',
-        isAuth:req.session.isLoggedIn,
-        userData:req.user
-    })
+    Review.find().then(reviews=>{
+        res.render('index',{
+            pageTitle:'Home Page',
+            isAuth:req.session.isLoggedIn,
+            userData:req.user,
+            revData:reviews
+        })
+    }).catch()
+    
 }
 
 exports.getAbout=(req,res,next)=>{
@@ -159,4 +164,16 @@ exports.getChatPage=(req,res,next)=>{
     res.render('chat_page',{
         
     })
+}
+exports.postReview=(req,res,next)=>{
+    const text=req.body.name
+    // const username=req.body.username
+    const review=new Review({
+        userId:req.user._id,
+        text:text,
+        username:req.user.username
+    })
+    review.save().then(result=>{
+        res.redirect('/')
+    }).catch()
 }

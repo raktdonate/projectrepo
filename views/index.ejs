@@ -7,10 +7,14 @@
        
         <div class="box1abc">
             <h1>Show that you care</h1>
+            <h1>Change their world</h1>
             <div class="boxref">
                 <a href="/donate">Donate here ---></a>
             </div>
             
+        </div>
+        <div class="videoboxi">
+
         </div>
             <!-- <div class="box1">
                 <div class="boxwhy">
@@ -86,64 +90,78 @@
 
             <div class="rect">
                 <div class="before">
-                    <h1 class="recthead">Before donation</h1>
+                    <h1 class="recthead">Before donation
+
+                    </h1>
+                    <p>Donating Blood? Don't take aspirin for 2 days before your appointment.
+                        Drink an extra 16 oz. of water (or other nonalcoholic drink) before your appointment.
+                        Eat a healthy meal, avoiding fatty foods like hamburgers, fries or ice cream</p>
                 </div>
                 <div class="during">
-                    <h1 class="recthead">During donation</h2>
+                    <h1 class="recthead">During donation</h1>
+                    <p>Lie or sit in a reclining chair with your arm extended on an armrest
+                        If you have a preference for which arm or vein is used, tell the person who is collecting your blood. 
+                        Wear a shirt with sleeves that you can roll up above your elbows.
+                        Relax, listen to music, talk to other donors or read while you donate.</p>
                 </div>
                 <div class="after">
                     <h1 class="recthead">After donation</h1>
+                    <p>Do not get immediately after the process is over, rest for at least 5 minutes.
+                        If bruising occurs, apply a cold pack to the area periodically during the first 24 hours.
+                        Increase your fluid intake for the next 24 to 48 hours as it might take around 24 hours for the body to get the fluids retrieved post blood donation.
+                        Eat something that is rich in sugar to boost up your energy levels</p>
                 </div>
             </div>
 
 
-            <div class="reviewbox">
-                <p>Name</p>
-                <p>Reviews</p>
-            </div>
-
-            <!-- <footer class="footer">
-
-            </footer>
-            <%- include('./includes/tail.ejs')%> -->
-            
-    <!-- <div class="rect">
-        <div class="before">
-            <h1 class="recthead">Before donation</h1>
-        </div>
-        <div class="during">
-            <h1 class="recthead">During donation</h2>
-        </div>
-        <div class="after">
-            <h1 class="recthead">After donation</h1>
-        </div>
-    </div> -->
-    <!-- <footer class="footer">
-        
-        <div class="footi">
-            <div class="footii">
-             <p>Mail Us At:</p>
-             <a href="redtolife@gmail.com">redtolife@gmail.com</a>
-            </div>
-        </div>
-        <div class="footm">
-        <div class="footmi">
-            <img class="bloodimg" src="/public/images/blood.png" alt="">
-            <h2>redToLIFE</h2>
-            <p>redTOLiFE | HackJMI | Jamia Millia Islamia University</p>
-        </div>
-        </div>
-        <div class="footl">
-            <p>Follow Us</p>
-            <div class="footimage">
-                <a href=""><img class="imagefoot" src="/images/facebook.png" alt=""></a>
-            <a href=""><img class="imagefoot" src="/images/instagram.png" alt=""></a>
-            <a href=""><img class="imagefoot" src="/images/twitter.png" alt=""></a>
-            </div>
-        </div>
-          
+    <div class="khubanbox">
+            <% if(revData.length>0){%>
+                <ul>
+                <% for(let rev of revData){%>
+                    <div class="libox">
+                        <li class="listreview">
+                            <div class="khubandiv">
+                                <h2><%=rev.username%></h2>
+                                <p class="revipara">Review</p>
+                                <p><%=rev.text%></p>
+                            </div>
+                            
+                        </li>
+                    </div>
+                   
+                    
+                        
+                    
+                   
+                <%}%>
+            </ul>
+            <%}%>
+    </div>       
     
-    </footer> -->
+    <div class="reviewbox">
+        <form action="/reviewform" method="post"> 
+            <!-- <label for="reviews">Enter your reviews</label>
+            <input type="text" name="name" id="name" >
+            <button class="bot" type="submit">Submit</button> -->
+            <div class="amam">
+                <label for="reviews">Reviews here</label>
+            <textarea id="name" name="name" rows="6" cols="50">
+            </textarea>
+            <button class="bot" type="submit">Submit</button>
+            </div>
+            
+         </form>
+    </div>
+    
+       
+    
+    
+
+
+
+
+
+
     <footer class="footer">
 
         <div class="footi">

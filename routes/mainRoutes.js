@@ -24,4 +24,6 @@ router.post('/editprofile',mainController.postChanges)
 
 router.get('/chatpage/:userToChat',mainController.getChatPage)
 
+router.post('/reviewForm',mainController.postReview)
+
 module.exports=router
