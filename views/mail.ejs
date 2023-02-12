@@ -1,17 +1,30 @@
 <%- include('./includes/head.ejs')%>
-<link rel="stylesheet" href="css/mail.css">
-</head>
-<body>
-    <div class="formmail" >
-        <form action="/sendmail" method="post">
-            <label  for="contact">Enter your contact</label>
-            <input class="contact" name="contact" id="contact" type="text">
-            <input hidden type="text" value="<%=userId%>" name="userId">
-            <label  for="msgmail">Type your message</label>
-            <input class="msgmail" name="msgmail" id="msgmail" type="text">
-            <button class="btn2" type="submit">send</button>
-        </form>
-    </div>
+    <!-- <link rel="stylesheet" href="css/khubi.css"> -->
+
+
+    <style>
+        body {background-color: #ffeff4;}
+        .boxmailera {height: 38vh; width: 35vw; background-color: #e63838; margin:auto ; margin-top: 25vh}
+        h1   {color: blue;}
+        label   {color: white;font-size: 2rem; padding-top: 9vh; padding-left: 2vw;}
+        input{ height: 5vh; width: 15vw; padding-left: 12vw; margin-top: 2vh; margin-left: 2vw;}
+        .btn2020{ height: 6vh; width: 8vw; border-radius: 15px; background-color: white;margin-top: 2vh; margin-left: 13vw;}
+        </style>
+    </head>
+    <body>
+     <div class="boxmailera" >
+        
+            <form action="/sendmail" method="post">
+                <!-- <label style="color: #e63838;" for="contact">Enter your contact</label> -->
+                <label  for="contact">Enter your contact</label>
+                <input  class="contact" name="contact" id="contact" type="text">
+                <input hidden type="text" value="<%=userId%>" name="userId">
+                <!-- <label style="color: #e63838;" for="msgmail">Type your message</label> -->
+                 <label for="msgmail">Type your message</label>
+                <input class="msgmail" name="msgmail" id="msgmail" type="text">
+                <button class="btn2020" type="submit">Send</button>
+            </form>
+     </div>
    
     
 <%- include('./includes/tail.ejs')%>

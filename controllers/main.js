@@ -16,6 +16,7 @@ exports.getIndex=(req,res,next)=>{
         })
     }).catch()
 }
+
 const Donate=require('../model/donate')
 const mongodb=require('mongodb')
 

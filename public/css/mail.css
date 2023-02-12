@@ -1,9 +1,0 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.formmail{
-    display: flex;
-    flex-direction: column;
-    background-color: aqua;
-}
