@@ -1,0 +1,97 @@
+<%- include('./includes/head.ejs')%>
+    <link rel="stylesheet" href="css/ngoz-community.css">
+    </head>
+
+    <body>
+        <%- include('./includes/navbar.ejs')%>
+            <div class="parent">
+                <div class="ngobox1">
+                    <div class="ngobox11">
+                        <img src="images/ng.png" alt="">
+                    </div>
+                    <div class="ngoparaboxn">
+                        <h1>NGO Community</h1>
+                        <p>A community for the NGOs and Blood Banks to directly communicare and help the people in need
+                            of blood transfusion.</p>
+
+                        <!-- <div class="ngojoinbox">
+                            <a href="/joincommunity">Join our community today</a>
+                        </div> -->
+                    </div>
+
+                </div>
+                <div>
+                    <h1 class="listofngos">List Of NGOs</h1>
+                </div>
+                <div class="ngoboxaaa">
+    
+                    <ul class="grandlist">
+                        <% if(userData2.length>=0){%>
+                            <% for(let ngo of userData2){%>
+                      
+                        <li class="ngolistdc">
+                            <!-- <div class="ngolistdcdiv" id="ngolistdivimg">
+                                <img class="ngodp" src="images/profile.jpg" alt="">
+                            </div> -->
+                            <div class="ngolistdcdiv">
+                                
+                                <p class="ngoinfo">Name</p>
+                                <p><%=ngo.username%></p>
+                                
+                            </div>
+                            <div class="ngolistdcdiv">
+                                <p class="ngoinfo">State</p>
+                                <p><%=ngo.state%></p>
+                            </div>
+                            <div class="ngolistdcdiv">
+                                <p class="ngoinfo">City</p>
+                                <p><%=ngo.city%></p>
+                               
+                            </div>
+                            
+                            <div class="ngolistdcdiv">
+                                <p class="ngoinfo">Email</p>
+                              <p> <%=ngo.email%></p>
+                            </div>
+                           
+                            <div class="ngolistdcdiv">
+                                <p class="ngoinfo" >Contact</p>
+                                <p><%=ngo.contact%></p>
+                            </div>
+                
+                        </li>
+                        <%}%>
+                        <%}%>
+                       
+                    </ul>
+                 
+                    
+                </div>
+            </div>
+            <footer class="footer">
+
+                <div class="footi">
+                    <div class="footii">
+                        <p>Mail Us At:</p>
+                        <a href="redtolife@gmail.com">redtolife@gmail.com</a>
+                    </div>
+                </div>
+                <div class="footm">
+                    <div class="footmi">
+                        <img class="bloodimg" src="images/logo.png" alt="">
+                        <h2>redToLIFE</h2>
+                        <p>redTOLiFE | HackJMI | Jamia Millia Islamia University</p>
+                    </div>
+                </div>
+                <div class="footl">
+                    <p>Follow Us</p>
+                    <div class="footimage">
+                        <a href=""><img class="imagefoot" src="/images/facebook.png" alt=""></a>
+                        <a href=""><img class="imagefoot" src="/images/instagram.png" alt=""></a>
+                        <a href=""><img class="imagefoot" src="/images/twitter.png" alt=""></a>
+                    </div>
+                </div>
+            </footer>
+            
+
+                            <%- include('./includes/tail.ejs')%>

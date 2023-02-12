@@ -1,19 +1,51 @@
-<nav>
-    <ul>
-        <li>
-            <a href="/index">Home</a>            
-        </li>
-        <li>
-            <a href="/donate">Donate</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-        <li>
-            <a href="/login">Login</a>
-        </li>
-        <li>
-            <a href="/signup">Signup</a>
-        </li>
-    </ul>
+<nav class="navilist">
+    <div class="left">
+       
+        <img id="logo" src="images/logo.png" alt="">
+        <p id="logopara">redToLiFE</p>
+        <ul class="list">
+            <li class="listing"> <a class="<%= path === '/' ? 'active' : '' %>" href="/"> HOME</a></li>
+            <li class="<%= path === '/aboutus' ? 'active' : '' %> listing"> <a href="/about"> ABOUT US</a></li>
+            <li class="<%= path === '/donate' ? 'active' : '' %> listing"><a href="/donate"> DONATE</a></li>
+            <li class="<%= path === '/donorcommunity' ? 'active' : '' %> listing"><a href="/donorcommunity"> DONOR COMMUNITY</a></li>
+            <li class="<%= path === '/ngocommunity' ? 'active' : '' %> listing"><a href="/ngocommunity">NGO COMMUNITY</a></li>
+        </ul>
+    </div>
+    <% if(!isAuth){%>
+        <div class="right">
+            <ul class="list">
+                <li class="listing"> <a href="/login">LOGIN</a> </li>
+                <li class="listing"> <a href="/signup">SIGNUP</a> </li>
+            </ul>
+        </div>
+        <%}else{%>
+            <% if(userData){%>
+                <% if(!userData.isAdmin){%>
+                    <div class="right">
+                        <ul class="list">
+                            <li class="listing imgprofile">
+                                <div class="dropdown">
+                                    <% if(userData.profileUrl){%>
+                                        <button class="dropbtn"><img id="profileimg" class="profileimg"
+                                                src="/<%=userData.profileUrl%>" alt="profile"></button>
+                                        <%}else{%>
+                                            <button class="dropbtn"><img id="profileimg" class="profileimg"
+                                                    src="images/profileee.png" alt="profile"></button>
+                                            <%}%>
+
+                                                <div class="dropdown-content">
+                                                    <a href="/profile">Profile</a>
+                                                    <a href="/logout">Logout</a>
+
+                                                </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <%}else{%>
+                        <a href="/adminlist">List Of Ngo</a>
+                        <a href="/logout">Logout</a>
+                    <%}%>
+            <%}%>
+        <%}%>
 </nav>

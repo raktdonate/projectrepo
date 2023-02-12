@@ -1,6 +1,164 @@
 <%- include('./includes/head.ejs')%>
-</head>
-<body>
-    <%- include('./includes/navbar.ejs')%>
-    <p>welcome to home page</p>
-<%- include('./includes/tail.ejs')%>
+    <link rel="stylesheet" href="css/index.css">
+    </head>
+
+    <body>
+        <%- include('./includes/navbar.ejs')%>
+        <div class="indexmainbox">
+            <div class="box1abc">
+                <h1>Show that you care</h1>
+                <h1>to Change our world</h1>
+                <div class="boxref">
+                    <a href="/donate">Donate here</a>
+                </div>
+                
+            </div>
+            <div class="videoboxi">
+                <video controls autoplay class="video1" >
+                    <source src="images/Front-Page-Video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+       
+        
+            <div class="box2">
+               
+                <div class="dropbox">
+                    <!-- <img class="imagedrop" src="images/inverteddrop.png" alt=""> -->
+                    <h1 id="health">Health conditions</h1>
+                    <div class="boxn">
+                        <p class="para p1"> >>Past three months - not donated blood or been treated for Malaria.</p>
+                        <p class="para p1"> >>The donor should not have had any immunization/vaccination for cholera,
+                            typhoid, diphtheria, tetanus, plague, or gammaglobulin in 15 days preceding the blood donation.
+                        </p>
+                        <p class="para p1">>>Eligible men may donate blood once every 3 months. </p>
+                        <p class="para p1"> >>Eligible women may donate once every 4 months.</p>
+                        <p class="para p1"> >>Women should not be pregnant or feeding her child and should not donate during
+                            her menstrual cycles
+                        <p class="para p1"> >>Free from Diabetes, not suffering from chest pain, heart disease or high BP,
+                            cancer, blood clotting problem or blood disease, fatigue.</p>
+                    </div>
+                   
+                </div>
+                <div class="eligibilitybox">
+                    <h1 id="eligibilityhead">Check Your Eligibility </h1>
+                    <div class="box3">
+                        <label for="Age">Enter your age</label>
+                        <input class="inp" type="number" placeholder="Enter your age">
+                        <label for="weight">Enter your weight</label>
+                        <input class="inp" type="number" placeholder="Enter your weight">
+                        <label for="heamoglobin">Enter your heamoglobin level</label>
+                        <input class="inp" type="number" placeholder="Enter you heamoglobin level">
+                        <label for="donationdate">Last donated</label>
+                        <input class="inp" type="date" name="Last donated" id="date" placeholder="Last donated on">
+                        <!-- <input class="inp" type="text" placeholder="Gender"> -->
+                        <SELECT class="inp inplast" name="Gender" id="Gender">
+                            <option value="">Gender</option>
+                            <OPTION Value="Female">Female</OPTION>
+                            <OPTION Value="Male">Male</OPTION>
+                            OPTION Value="Female">Female</OPTION>
+                            <OPTION Value="other">Other</OPTION>
+                        </SELECT>
+                        <button class="btn" type="submit">Check</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rect">
+                <div class="before">
+                    <h1 class="recthead">Before donation
+
+                    </h1>
+                    <p>Donating Blood? Don't take aspirin for 2 days before your appointment.
+                        Drink an extra 16 oz. of water (or other nonalcoholic drink) before your appointment.
+                        Eat a healthy meal, avoiding fatty foods like hamburgers, fries or ice cream</p>
+                </div>
+                <div class="during">
+                    <h1 class="recthead">During donation</h1>
+                    <p>Lie or sit in a reclining chair with your arm extended on an armrest
+                        If you have a preference for which arm or vein is used, tell the person who is collecting your blood. 
+                        Wear a shirt with sleeves that you can roll up above your elbows.
+                        Relax, listen to music, talk to other donors or read while you donate.</p>
+                </div>
+                <div class="after">
+                    <h1 class="recthead">After donation</h1>
+                    <p>Do not get immediately after the process is over, rest for at least 5 minutes.
+                        If bruising occurs, apply a cold pack to the area periodically during the first 24 hours.
+                        Increase your fluid intake for the next 24 to 48 hours as it might take around 24 hours for the body to get the fluids retrieved post blood donation.
+                        Eat something that is rich in sugar to boost up your energy levels</p>
+                </div>
+            </div>
+
+            <div class="reviewboxmain">
+                <h6 class="headreview">Share your experience after donation, so that it can help/motivate someone</h6>
+                <!-- <hr class="linereview"> -->
+                <div class="khubanbox">
+                    <% if(revData.length>0){%>
+                        <ul class="ulrev">
+                        <% for(let rev of revData){%>
+                            <div class="libox">
+                                <li class="listreview">
+                                    <div class="khubandiv">
+                                        <h2><%=rev.username%></h2>
+
+                                        <p><%=rev.text%></p>
+                                    </div>   
+                                </li>
+                            </div>
+                        <%}%>
+                    </ul>
+                    <div class="reviewbox">
+                        <form action="/reviewform" method="post"> 
+                            <div class="amam">
+                                <label for="reviews">Reviews here</label>
+                            <textarea id="name" name="name" rows="" cols="">
+                            </textarea>
+                            <button class="bot" type="submit">Submit</button>
+                            </div>
+                            
+                         </form>
+                    </div>
+                    <%}%>
+            </div>       
+            </div>
+    
+    
+    
+    
+       
+    
+    
+
+
+
+
+
+
+    <footer class="footer">
+
+        <div class="footi">
+            <div class="footii">
+                <p>Mail Us At:</p>
+                <a href="redtolife@gmail.com">redtolife@gmail.com</a>
+            </div>
+        </div>
+        <div class="footm">
+            <div class="footmi">
+                <img class="bloodimg" src="images/logo.png" alt="">
+                <h2>redToLIFE</h2>
+                <p>redTOLiFE | HackJMI | Jamia Millia Islamia University</p>
+            </div>
+        </div>
+        <div class="footl">
+            <p>Follow Us</p>
+            <div class="footimage">
+                <a href=""><img class="imagefoot" src="/images/facebook.png" alt=""></a>
+                <a href=""><img class="imagefoot" src="/images/instagram.png" alt=""></a>
+                <a href=""><img class="imagefoot" src="/images/twitter.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+        <script src="js/login.js" defer></script>
+    </body>
+    </html>

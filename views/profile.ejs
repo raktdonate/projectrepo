@@ -1,0 +1,47 @@
+<%- include('./includes/head.ejs')%>
+<link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <%- include('./includes/navbar.ejs')%>
+    <div class="mainbox">
+        <div class="mainbox1">
+            <form class="mainbox1form" action="/editprofile" method="post" enctype="multipart/form-data">
+                <div class="mainbox1a">
+                    <% if(userData.profileUrl){%>
+                        <img class="img" src="<%=userData.profileUrl%>" alt="">
+                    <%}else{%>
+                        <img class="img" src="images/profile.jpg" alt="">
+                    <%}%>
+                    
+                    <% if(edit){%>
+                    <label for="image"> Change Profile</label>
+                    <input hidden type="file" name="image" id="image">
+                    <%}%>
+                </div>
+                <div class="mainbox1b">
+                    <% if(edit){%>
+                        <!-- <p></p> -->
+                        <label for="username">Username</label>
+                        <input value="<%=userData.username%>" name="username" id="username" type="text">
+                        <label for="email">Email</label>
+                        <input value="<%=userData.email%>" readonly name="email" id="email" type="email">
+                        <button type="submit">Submit Changes</button>
+                    <%}else{%>
+                        <label for="username">Username</label>
+                        <input readonly value="<%=userData.username%>" name="username" id="username" type="text">
+                        <label for="email">Email</label>
+                        <input value="<%=userData.email%>" readonly name="email" id="email" type="email">
+                        <a href="/profile?edit=true">Edit Profile</a>
+                    <%}%>
+                     
+                </div>
+            </form>
+            
+           
+        </div>
+        <div class="mainbox2">
+
+        </div>
+    </div>
+    
+<%- include('./includes/tail.ejs')%>

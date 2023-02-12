@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'FontHere';
+    src: URL('images/FontsFree.ttf') format('truetype');
+  }
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    background-color: #ffe9f4;;
+}
+.active{
+    color: gray;
+}
+
+.navilist{
+    display: flex;
+    width: 100vw;
+    height: 14vh ;
+    
+}
+.left{
+    width: 82vw;
+    height: 14vh;
+    background-color: #e63838;
+    display: flex;;
+    align-items: center;
+    /* box-shadow: 7px 5px 8px  rgb(76, 73, 73); */
+}
+.list{
+    display: flex;
+    text-decoration: none;
+}
+.listing {
+    background-color: #e63838;
+    list-style: none;
+}
+.listing a{
+    text-decoration: none;
+    padding: 2vw;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    
+}
+
+
+.listing a{
+    color: white;
+    font-size: 0.80rem;
+}
+
+
+.listing a:active{
+    color: gray;
+}
+.right{
+    width: 18vw;
+    height: 14vh;
+    background-color: #e63838;
+    display: flex;
+    align-items: center;
+    
+    
+}
+#logo{
+    height: 11vh;
+    width: 6vw;
+    margin-left: 6px;
+    padding-bottom: 2px;
+}
+#logopara{
+    color: #ffe9f4;
+    font-size: 1.7rem;
+    padding-left: 0.5vw;
+    font-family: 'FontHere';
+    /* padding-bottom: 1vh; */
+    
+}
+.box1 h1{
+    color: #e63838;
+    font-size: 2rem;
+    height: 20vh;
+    width: 30vw;
+
+}
+.box1 p a{
+    color: #e63838;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.profileimg{
+    /* background-color: #e63838; */
+    height: 8vh;
+    width: 4vw;
+
+}
+.imgprofile{
+    position: relative;
+    left: 10vw;
+    background-color: #e63838;
+}
+
+
+.dropdown{
+    background-color: #e63838;
+    position: relative;
+    display: inline-block;
+}
+.dropbtn{
+    background-color: #e63838;
+    border-radius: 50%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+#profileimg{
+    margin: 0;
+}

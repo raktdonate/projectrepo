@@ -1,0 +1,96 @@
+body {
+   background-color: #ffe9f4;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  /* .navi{
+    width: 100vw;
+    height: 15vh;
+    background-color: #49c1a2;
+  } */
+  .signup-box {
+    width:35vw;
+    height:85vh;
+    margin: 3.5vh auto;
+    border-radius: 3px;
+    background-color: #e63838;
+  }
+  h1 {
+    text-align: center;
+    padding-top: 6vh;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  /* h4 {
+    text-align: center;
+  } */
+  
+  form {
+    width: 300px;
+    margin-left: 70px;
+  }
+  
+  form label {
+    display: flex;
+    margin-top: 20px;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  form input {
+    width: 25vw;
+    height: 4.2vh;
+    padding: 7px;
+    color: #b91816;
+    border: 1px solid gray;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+  .btnlogin {
+    width: 7vw;
+    height: 6vh;
+    margin-top: -4vh;
+    /* border:solid 2px gray; */
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+    position: relative;
+    left: 9vw;
+    
+  }
+  p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+  }
+  .para-2 {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .para-2 a {
+    color: white;
+    text-decoration: none;
+  }
+  .imgtoggling{
+    position: relative;
+    bottom: 2.8vw;
+    left: 23vw;
+  }
+  .signupmsg{
+    height: 3vh;
+    color: rgb(90, 56, 56);
+    font-size: 3vh;
+    font-weight: 400;
+  }
+  

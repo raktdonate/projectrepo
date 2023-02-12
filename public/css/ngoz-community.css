@@ -1,0 +1,234 @@
+.parent{
+    background-color: #ffe9f4;
+}
+
+.ngobox1{
+    width: 100vw;
+    height: 90vh;
+    /* background-color: antiquewhite; */
+    /* display: flex; */
+    /* flex-direction: column; */
+
+}
+.ngobox11{
+    /* margin: 3vh; */
+    /* margin-top: 4.5vh; */
+    width: 100vw;
+    height: 90vh;
+    /* margin-left: 2vw; */
+   
+}
+.ngoparaboxn{
+    position: relative;
+    bottom: 70vh;
+    left: 7vw;
+    /* background-color: red; */
+
+    width: 28vw;
+    height: 70vh;
+    
+
+}
+.ngoparaboxn h1{
+    color: white;
+    /* color: #e63838; */
+    font-size: 2.7vw;
+    padding-bottom: 3vh;
+    font-weight: 700;
+}
+.ngoparaboxn p{
+  color: white;
+    font-size: 1.5rem;
+    padding-top: 1.8vh;
+    font-weight: 700;
+}
+.ngobox11 img{
+    width: 100vw;
+    height: 90vh;
+    /* border-radius: 9px; */
+}
+.ngojoinbox{
+   
+    width: 18vw;
+    height: 6vh;
+    border-radius: 2vw;
+    
+    margin-top: 16vh;
+    background-color: #e63838;
+    padding-top: 2vh;
+}
+    
+
+.ngojoinbox a{
+    font-weight: 900;
+    font-size: 1rem;
+   
+    color: white;
+    display: flex;
+    text-align: center;
+    padding-left: 20px;
+    padding-top: 3px;
+    text-decoration: none;
+}
+
+.ngolistdc{
+    width: 95vw;
+    height: 20vh;
+    /* background-color: #ffe9f4; */
+
+    /* border: 2px solid #b91816; */
+    border: 2px solid #b91816;
+    /* margin-top: 5vh; */
+    margin-top: 3vh;
+    margin-left: 1.8vw;
+    margin-bottom: 3vw;
+    border-radius: 2vh;
+
+    display: flex;
+}
+
+.ngodp{
+    height: 9vh;
+    width: 7vw;
+    border-radius: 50%;
+
+}
+.ngoboxaaa{
+    height: auto;
+    width: 100vw;
+}
+.ngolistdc p{
+    font-size: 1.6vw;
+}
+.chat a{
+    text-decoration: none;
+    color: black;
+}
+
+#ngolistdcdivimg{
+    margin-top: 1vh;
+}
+.ngolistdcdiv{
+    position: relative;
+    left: 4vw;
+    top: 3vh;
+   font-size: 1.5vw;
+    height: 20vh;
+    width: 18vw;
+    border: 2px;
+}
+.ngoinfo{
+    margin-bottom: 2vh;
+    font-weight: 600;
+}
+.footer {
+    display: flex;
+    height: 30vh;
+    width: 100vw;
+    background-color: #e63838;
+  }
+  
+  .footi {
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    width: 33vw;
+    background-color: #e63838;
+    color: white;
+    font-size: 1rem;
+  
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: auto;
+    text-align: center;
+  }
+  .footii {
+    padding-top: 18%;
+    padding-right: 30%;
+  }
+  .footi p {
+    font-weight: 1000;
+  }
+  .footi a {
+    color: white;
+    padding: 10%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    align-items: center;
+  }
+  
+  .footm {
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    width: 33vw;
+    background-color: #e63838;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+  }
+  .footmi {
+    padding-top: 10%;
+  }
+  .footmi h2 {
+    font-weight: 1000;
+    padding-bottom: 3vh;
+  }
+  .footmi p {
+    padding: 2%;
+    font-weight: 300;
+  }
+  .bloodimg {
+    height: 10vh;
+    width: 7vw;
+  }
+  
+  .footl {
+    height: 30vh;
+    width: 33vw;
+    background-color: #e63838;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .footl p {
+    padding-left: 50%;
+    padding-top: 18%;
+  }
+  .footl a {
+    align-items: center;
+  }
+  .footimage {
+    display: flex;
+    padding-top: 2%;
+    padding-left: 40%;
+  }
+  .imagefoot1{
+    height: 4vh;
+    width: 3vw;
+    padding-top: 3px;
+   
+    color: white;
+  }
+  .imagefoot {
+    height: 5vh;
+    width: 4vw;
+    padding: 2px;
+    color: white;
+  }
+  .listofngos{
+    text-align: center;
+    margin: 3vw;
+    font-size: 3.4vw;
+  }
+  
