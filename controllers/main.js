@@ -11,8 +11,8 @@ exports.getIndex=(req,res,next)=>{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
             userData:req.user,
-            path:'/',
-            revData:reviews
+            revData:reviews,
+            path:'/'
         })
     }).catch()
 }
