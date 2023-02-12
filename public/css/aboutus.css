@@ -11,10 +11,14 @@
 .box1 {
   display: flex;
   height: 82vh;
+  margin-bottom: 25px;
 }
 .boxwhy {
-  width: 60vw;
-  height: 75vh;
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem;
+  width: 80%;
+  height: 65vh;
   border-radius: 20px;
   background-color: white;
   margin: 6vh 4vw;
@@ -24,16 +28,97 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.donationimg {
-  width: 38vw;
-  height: 75vh;
 
+.boxwhy2 {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem;
+  width: 80%;
+  height: 65vh;
+  border-radius: 20px;
+  background-color: white;
   margin: 6vh 4vw;
+  border: solid #ffe9f4;
+  box-shadow: -6px 6px 3px #e63838;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.boxwhy img{
+  height: 49vh;
+  width: 59vh;
+  position: relative;
+  left: 1vw;
+  top: 7vh;
+  margin-right: 10vw;
+
+}
+.boxwhy p{
+  font-size: 140%;
+  font-weight: 400;
+  
+}
+
+.boxwhy2 img{
+  height: 49vh;
+  width: 39vh;
+  position: relative;
+  left: 13vw;
+  top: 7vh;
+}
+
+.boxwhy2 p{
+  font-size: 140%;
+  font-weight: 400;
+}
+
+.boxwhy_box1 {
+  color: white;
+  height: 80%;
+  width: 60%;
+  padding: 2rem;
+  margin-top: 7%;
+  margin-bottom: 12%;
+  font-weight: 400;
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* border: 2px solid red; */
+}
+.boxwhy_box2 {
+  /* display: flex; */
+  color: white;
+  height: 80%;
+  width: 40%;
+  padding: 2rem;
+  place-self: center;
+  border-radius: 20px;
+  background-color: #f73636;
+  /* border: 2px solid red; */
+  font-weight: 400;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+
+
+.donationimg {
+  width: 15%;
+  height: 100%;
+  margin-left: 4vw;
+  /* margin: 6vh 4vw; */
+}
+.donationimg2{
+  width: 15%;
+  height: 100%;
+  margin-right: 4vw;
 }
 #imagedonation {
+  margin-top: 3.5rem;
   text-align: center;
   color: #e63838;
   font-size: 5rem;
+  padding: 1rem;
   font-weight: bolder;
 }
 .image {
@@ -60,7 +145,15 @@
 
 .side {
   height: 4vh;
-  width: 4vw;
+  width: 2vw;
+  padding-right: 1vw;
+}
+
+.how{
+  margin: 4vw;
+}
+.how h1{
+  font-size: 10vh;
 }
 
 .box2 {
@@ -81,7 +174,10 @@
 
 .box21 p {
   padding-top: 10px;
-  padding-left: 4vw;
+  padding-left: 3vw;
+  font-size: 140%;
+  font-weight: 400;
+
 }
 
 .box2img1 {
@@ -103,7 +199,11 @@
 
 .box22 p {
   padding-top: 10px;
-  padding-left: 4vw;
+  padding-left: 3vw;
+  font-size: 140%;
+  font-weight: 400;
+
+
 }
 
 .box2img2 {
@@ -132,7 +232,10 @@
 
 .box31 p {
   padding-top: 10px;
-  padding-left: 4vw;
+  padding-left: 3vw;
+  font-size: 140%;
+  font-weight: 400;
+
 }
 
 .box3img2 {
@@ -154,7 +257,10 @@
 
 .box32 p {
   padding-top: 10px;
-  padding-left: 4vw;
+  padding-left: 3vw;
+  font-size: 140%;
+  font-weight: 400;
+
 }
 
 .box3 {
@@ -226,6 +332,7 @@
 }
 .footmi h2 {
   font-weight: 1000;
+  padding-bottom: 3vh;
 }
 .footmi p {
   padding: 2%;
@@ -260,9 +367,19 @@
   padding-top: 2%;
   padding-left: 40%;
 }
+
+.imagefoot1{
+  height: 4vh;
+  width: 3vw;
+  padding-top: 3px;
+ 
+  color: white;
+}
 .imagefoot {
   height: 5vh;
   width: 4vw;
   padding: 2px;
   color: white;
 }
+
+
