@@ -11,10 +11,12 @@ exports.getIndex=(req,res,next)=>{
             pageTitle:'Home Page',
             isAuth:req.session.isLoggedIn,
             userData:req.user,
+            path:'/',
             revData:reviews
         })
     }).catch()
 }
+
 const Donate=require('../model/donate')
 const mongodb=require('mongodb')
 
@@ -35,15 +37,7 @@ const transporter = nodemailer.createTransport({
 }
 );
 
-exports.getIndex=(req,res,next)=>{
-    console.log(req.user)
-    res.render('index',{
-        pageTitle:'Home Page',
-        isAuth:req.session.isLoggedIn,
-        userData:req.user,
-        path:'/'
-    })
-}
+
 exports.getDonate=(req,res,next)=>{
     Donate.find().limit(20).then(users=>{
         res.render('donate',{
