@@ -22,14 +22,16 @@ body{
     margin-top: 20vh;
     margin-bottom: 5vh;
 }
-
+.indexmainbox{
+  height: 55vh;
+}
 .boxref{
 
     align-items: center;
-    border-radius: 40px;
     margin-left: 3vw;
     height: 7vh;
-    width: 20vw;
+    border-radius: 5px;
+    width: 14vw;
     position: relative;
     top: 14vh;
     background-color: #e63838;
@@ -213,11 +215,14 @@ body{
 
     width: 42vw;
     height: 53vh;
-    background-color: #e63838;
     position: relative;
     left: 45vw;
     /* top: -12vh; */
     bottom: 50vh;
+}
+.video1{
+    width: 42vw;
+    height: 53vh;
 }
 .inplast{
     width:31vw ;
@@ -235,16 +240,18 @@ body{
 }
 .rect{
     width: 100vw;
-    height: 120vh;
+    height: 117vh;
     display: flex;
     background-color: #ffe9f4;
+    display: flex;
+    flex-direction: column;
     /* border: solid gray; */
     /* box-shadow:  4px 4px 6px gray; */
     margin-bottom: 9vh;
    
 }
 .before{
-    
+  margin-left: 5vw;
     height: 30vh;
     width: 43vw;
     border-radius: 33px;
@@ -253,46 +260,44 @@ body{
     /* border: solid #E63838; */
     background-color: white;
     box-shadow: 5px 5px #e63838;
-    margin-left: 7vw;
     padding-left: 2vw;
     padding-right: 2vw;
+    margin-bottom: 6vh
 }
 
 .after{
    
-    height: 36vh;
-    width: 43vw;
-    top: 301vh;
-    right: 44vw;
-    border-radius: 33px;
-    /* border: solid #E63838; */
-    margin: 10px;
-    position: absolute;
-   
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin-left: 5vw;
-    background-color: white;
-    box-shadow: 5px 5px #e63838;
+  height: 30vh;
+  width: 43vw;
+  top: 5vh;
+  right: 5px;
+  border-radius: 33px;
+  /* border: solid #E63838; */
+  margin: 10px;
+  position: relative;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-left: 5vw;
+  background-color: white;
+  box-shadow: 5px 5px #e63838;
 }
 
 .during{
    
 
    
-    height: 35vh;
-    width: 38vw;
-
-    border-radius: 33px;
-    /* border: solid #E63838; */
-    margin: 10px;
-    position: absolute;
-    left: 50vw;
-    background-color:white;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    top: 260vh;
-    box-shadow: 5px 5px #e63838;
+  height: 30vh;
+  width: 41vw;
+  border-radius: 33px;
+  /* border: solid #E63838; */
+  margin: 10px;
+  position: relative;
+  left: 50vw;
+  background-color: white;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  top: 0vh;
+  box-shadow: 5px 5px #e63838;
 }
 .recthead{
     font-size: 2vw;
@@ -334,20 +339,27 @@ body{
 
 }
 #name{
-    margin-top: 2vh;
-    width: 30vw;
-    height: 20vh;
-    margin-left: 35vw;
-    font-size: 2vw;
-    
+  margin-top: 2vh;
+    width: 15vw;
+    height: 11vh;
+    margin-left: 17.3vw;
+    font-size: 1.1vw;
     border: 2px solid gray;
 }
+.ulrev{
+  margin-top: 2vh;
+  overflow-y: scroll;
+}
 .amam{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 39vw;
+  height: 30vh;
+  position: relative;
+  top: 5vw;
 }
 .amam label{
-    margin-left: 40vw;
+  margin-left: 15vw;
     font-size: 3vw;
     padding-top: 1vh;
     color: #e63838;
@@ -361,13 +373,13 @@ body{
     margin-left: 1.5vw; */
 /* }  */
 .bot{
-    width: 10vw;
-    height: 6vh;
-    border-radius: 13px;
-    margin-top: 2vh;
-    margin-left: 45vw;
-    margin-bottom: 4vh;
-    border: solid gray 2px;
+  width: 12vw;
+  height: 8vh;
+  border-radius: 13px;
+  margin-top: 2vh;
+  margin-left: 19vw;
+  margin-bottom: 4vh;
+  border: solid gray 2px;
 }
 .footer {
     display: flex;
@@ -457,13 +469,29 @@ body{
     align-items: center;
   }
   .khubanbox{
-    width: 40vw;
-    height: auto;
+    width: 82vw;
+    height: 59vh;
     display: flex;
     margin: auto;
-    flex-direction: column;
-    background-color: pink;
+    /* flex-direction: column; */
+    
     /* height: 70vh; */
+  }
+  .reviewboxmain{
+    background-color: pink;
+    width: 100vw;
+    height: 70vh;
+  }
+  .headreview{
+    font-size: 1.6vw;
+    padding-left: 18vw;
+    padding-top: 2vw;
+    font-weight: bold;
+  }
+  .linereview{
+    width: 64vw;
+    color: black;
+    margin-left: 17vw;
   }
   /* .khuban2{
     width: 35vw;
@@ -499,10 +527,9 @@ body{
     color: white;
   }
   .libox{
-    margin-top: 2vh;
     background-color: rgb(52, 52, 52);
     margin: 4vh 2vw;
-    height: auto;
+    height:16vh;
     width: 36vw;
   }
   .listreview{

@@ -4,49 +4,23 @@
 
     <body>
         <%- include('./includes/navbar.ejs')%>
-       
-        <div class="box1abc">
-            <h1>Show that you care</h1>
-            <h1>Change their world</h1>
-            <div class="boxref">
-                <a href="/donate">Donate here</a>
+        <div class="indexmainbox">
+            <div class="box1abc">
+                <h1>Show that you care</h1>
+                <h1>to Change our world</h1>
+                <div class="boxref">
+                    <a href="/donate">Donate here</a>
+                </div>
+                
             </div>
-            
+            <div class="videoboxi">
+                <video controls autoplay class="video1" >
+                    <source src="images/Front-Page-Video.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-        <div class="videoboxi">
-
-        </div>
-            <!-- <div class="box1">
-                <div class="boxwhy">
-                    <h1 id="headingwhy">WHY YOU SHOULD DONATE ?</h1>
-                    <p class="para">What if everyone eligible to donate became complacent and decided they didn't need
-                        to donate because
-                        someone else would?
-                    </p>
-
-                    <p class="para"> What if there wasn't enough donated blood available when you, a loved one - anyone
-                        - needed it? Blood cannot be manufactured it can only come from generous donors.</p>
-
-                    <p class="para"> A study in 2022 extrapolated the eligible donor population in India at 402 million.
-                        The supply was
-                        estimated at 33.8 donations against the demand of 36.3 per thousand donations, translating to a
-                        shortage
-                        of one million units annually. Medical specialty had the highest demand for blood at 6.0 million
-                        units
-                        (41.2%), followed by surgery 4.1 million (27.9%), obstetrics and gynecology 3.3 million (22.4%)
-                        and
-                        pediatrics 1.2 million (8.5%)</p>
-                    <p class="para"> The need for blood is universal, but access to safe blood for everyone who needs it
-                        remains a challenge
-                        worldwide. Voluntary, unpaid blood donors who give blood regularly can help overcome blood
-                        shortages. Their
-                        altruistic donation saves lives, they are heroes. We can all be heroes </p>
-                </div>
-                <div class="donationimg">
-                    <h2 id="imagedonation">Be a Hero</h2>
-                    <img class="image" src="images/donationpic.png" alt="">
-                </div>
-            </div> -->
+       
+        
             <div class="box2">
                
                 <div class="dropbox">
@@ -115,45 +89,41 @@
                 </div>
             </div>
 
+            <div class="reviewboxmain">
+                <h6 class="headreview">Share your experience after donation, so that it can help/motivate someone</h6>
+                <!-- <hr class="linereview"> -->
+                <div class="khubanbox">
+                    <% if(revData.length>0){%>
+                        <ul class="ulrev">
+                        <% for(let rev of revData){%>
+                            <div class="libox">
+                                <li class="listreview">
+                                    <div class="khubandiv">
+                                        <h2><%=rev.username%></h2>
 
-    <div class="khubanbox">
-            <% if(revData.length>0){%>
-                <ul>
-                <% for(let rev of revData){%>
-                    <div class="libox">
-                        <li class="listreview">
-                            <div class="khubandiv">
-                                <h2><%=rev.username%></h2>
-                                <p class="revipara">Review</p>
-                                <p><%=rev.text%></p>
+                                        <p><%=rev.text%></p>
+                                    </div>   
+                                </li>
+                            </div>
+                        <%}%>
+                    </ul>
+                    <div class="reviewbox">
+                        <form action="/reviewform" method="post"> 
+                            <div class="amam">
+                                <label for="reviews">Reviews here</label>
+                            <textarea id="name" name="name" rows="" cols="">
+                            </textarea>
+                            <button class="bot" type="submit">Submit</button>
                             </div>
                             
-                        </li>
+                         </form>
                     </div>
-                   
-                    
-                        
-                    
-                   
-                <%}%>
-            </ul>
-            <%}%>
-    </div>       
-    
-    <div class="reviewbox">
-        <form action="/reviewform" method="post"> 
-            <!-- <label for="reviews">Enter your reviews</label>
-            <input type="text" name="name" id="name" >
-            <button class="bot" type="submit">Submit</button> -->
-            <div class="amam">
-                <label for="reviews">Reviews here</label>
-            <textarea id="name" name="name" rows="6" cols="50">
-            </textarea>
-            <button class="bot" type="submit">Submit</button>
+                    <%}%>
+            </div>       
             </div>
-            
-         </form>
-    </div>
+    
+    
+    
     
        
     
