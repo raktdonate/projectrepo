@@ -247,3 +247,6 @@ form label {
   position: relative;
   left: 51vw;
 }
+.sendmaildonor{
+  cursor: pointer;
+}

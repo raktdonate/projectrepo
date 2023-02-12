@@ -3,6 +3,24 @@ const User=require('../model/user')
 const Ngo=require('../model/ngo')
 const fileHelper=require('../utils/file')
 const Donate=require('../model/donate')
+const mongodb=require('mongodb')
+
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'rakt0304@gmail.com',
+    pass: 'deqmaynvjuffksez'
+  },
+  tls:{
+    rejectUnauthorized:false
+},
+  port: 465,
+  host: 'smtp.gmail.com'
+}
+);
 
 exports.getIndex=(req,res,next)=>{
     console.log(req.user)
@@ -241,4 +259,36 @@ exports.getChatPage=(req,res,next)=>{
     res.render('chat_page',{
         
     })
+}
+exports.getSendMail=(req,res,next)=>{
+    const userId=req.params.userId
+    res.render('mail',{
+        pageTitle:'Home Page',
+        isAuth:req.session.isLoggedIn,
+        userData:req.user,
+        path:'/mail',
+        userId:userId
+    })
+}
+exports.postMail=(req,res,next)=>{
+    const userId=req.body.userId
+    const msgMail=req.body.msgmail
+    const contact=req.body.contact
+    User.findOne({_id:new mongodb.ObjectId(userId)}).then(user=>{
+        console.log(user)
+        if(user){
+            transporter.sendMail({
+            to: user.email,
+            from: 'rakt0304@gmail.com',
+            subject: 'Donor Community Message',
+            html: `<h1>Contact is: ${contact}</h1>
+                  <p>${msgMail}</p>
+                  `
+          });
+          res.redirect('/')
+
+        }
+        
+    })
+    
 }
