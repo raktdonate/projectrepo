@@ -6,12 +6,14 @@ const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 const { validationResult } = require('express-validator/check')
+const pass = process.env.pass;
+const password = process.env.password;
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'rakt0304@gmail.com',
-    pass: 'deqmaynvjuffksez'
+    pass: pass
   },
   tls:{
     rejectUnauthorized:false
@@ -39,7 +41,7 @@ exports.postLogin = (req, res, next) => {
   const email = req.body.email
   const password = req.body.password
   const errors = validationResult(req)
-  if (email === 'abbash7613@gmail.com' && password === '123654') {
+  if (email === 'abbash7613@gmail.com' &&password===password) {
     User.findOne({ email: email }).then(user=>{
       if(user){
         console.log(user.email)
