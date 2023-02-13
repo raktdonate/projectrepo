@@ -22,12 +22,13 @@ const mongodb=require('mongodb')
 
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
+const pass = process.env.pass;
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'rakt0304@gmail.com',
-    pass: 'deqmaynvjuffksez'
+    pass: pass
   },
   tls:{
     rejectUnauthorized:false
