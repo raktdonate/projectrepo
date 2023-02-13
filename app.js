@@ -9,12 +9,13 @@ const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const errorController = require("./controllers/error");
 const multer = require("multer");
+require('dotenv').config();
+const MONGODB_URI = process.env.MONGODB_URI;
 const mongoose = require("mongoose");
 const User = require("./model/user");
 const Ngo = require("./model/ngo");
 
-const MONGODB_URI =
-  "mongodb+srv://blood77:raktkhuab123@cluster0.cwywrfk.mongodb.net/blooddonation";
+
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
